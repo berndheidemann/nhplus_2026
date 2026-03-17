@@ -149,8 +149,10 @@ public class TreatmentDao extends DaoImp<Treatment> {
      * <code>ResultSet</code>.
      */
     public List<Treatment> readTreatmentsByPid(long pid) throws SQLException {
-        ResultSet result = getReadAllTreatmentsOfOnePatientByPid(pid).executeQuery();
-        return getListFromResultSet(result);
+        try (PreparedStatement statement = getReadAllTreatmentsOfOnePatientByPid(pid);
+             ResultSet result = statement.executeQuery()) {
+            return getListFromResultSet(result);
+        }
     }
 
     /**
