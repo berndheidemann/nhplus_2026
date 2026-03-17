@@ -1,0 +1,93 @@
+# AB 03 — User Stories, Akzeptanzkriterien, Tasks, Testfälle
+
+> **Thema:** Planung der Erweiterung von NHPlus
+>
+> **Sozialform:** Gruppenarbeit (2-3 Personen)
+>
+> **Zeitrahmen:** ~3-4 Unterrichtsstunden
+
+**Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
+- User Stories mit Akzeptanzkriterien formulieren
+- aus User Stories konkrete Entwicklungs-Tasks ableiten
+- Testfälle aus Akzeptanzkriterien ableiten
+
+> **Hinweis:** Zum Aufbau und zur Formulierung von User Stories siehe das [Informationsblatt: User Stories](IB-User-Stories.md). Dort findet ihr auch vollständige Beispiele zu den bereits implementierten Modulen (Patienten, Behandlungen).
+
+## Aufgabenstellung
+
+Plant innerhalb eurer Gruppe die Erweiterung von NHPlus. Dabei sind **zwei Bereiche** zu bearbeiten:
+
+### 1. Pfleger-Verwaltung
+
+NHPlus soll um ein vollständiges Modul zur Verwaltung von Pflegekräften erweitert werden (vgl. AB01, Aufgabe 2). Erstellt dafür User Stories, die mindestens das Anlegen, Anzeigen, Ändern und Löschen von Pflegekräften abdecken.
+
+### 2. Datenschutz-Fixes
+
+Für **jeden Verstoß**, den ihr in [AB 02](AB02-Datenschutzanalyse.md) identifiziert habt, erstellt ihr eine User Story, die den Verstoß behebt.
+
+---
+
+Für jede User Story:
+
+1. Formuliert die **User Story** im Format: *Als \<Rolle\> möchte ich \<Funktionalität\>, um \<Nutzen\> zu erreichen.*
+2. Definiert **Akzeptanzkriterien**, die festlegen, wann die User Story fertig implementiert ist.
+3. Leitet **Tasks** ab — welche Klassen müssen neu erstellt, welche bestehenden Klassen angepasst werden?
+4. Leitet aus den Akzeptanzkriterien **Testfälle** ab.
+
+Teilt die User Stories so auf, dass **jedes Gruppenmitglied mindestens eine User Story verantwortet**.
+
+---
+
+## Vorlage
+
+Für jede User Story ist die folgende Tabellenstruktur zu verwenden (für weitere User Stories kopieren):
+
+### User Story
+
+> Als \<Rolle\> möchte ich \<Funktionalität\>, um \<Nutzen\> zu erreichen.
+
+### Akzeptanzkriterien
+
+| Nr. | Kriterium |
+|-----|-----------|
+| A_1 | |
+| A_2 | |
+| ... | |
+
+### Tasks
+
+| Nr. | Task |
+|-----|------|
+| T_1 | |
+| T_2 | |
+| ... | |
+
+### Testfälle
+
+**TF1:**
+
+| | |
+|---|---|
+| **Vorbedingung** | |
+| **Testschritte** | |
+| **Erwartetes Ergebnis** | |
+
+**TF2:**
+
+| | |
+|---|---|
+| **Vorbedingung** | |
+| **Testschritte** | |
+| **Erwartetes Ergebnis** | |
+
+---
+
+## Relevante Ressourcen
+
+- [Informationsblatt: User Stories](IB-User-Stories.md) — Erklärung und vollständige Beispiele
+- [AB 01 — Analyse der Architektur](AB01-Analyse-der-Architektur.md) — technischer Kontext und Architekturverständnis
+- [AB 02 — Datenschutzanalyse](AB02-Datenschutzanalyse.md) — eure identifizierten Verstöße und Anforderungen
+
+---
+
+*Weiter mit [AB 04 — Implementierung](AB04-Implementierung.md)*
