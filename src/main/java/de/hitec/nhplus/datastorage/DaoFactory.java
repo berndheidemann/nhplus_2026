@@ -7,7 +7,7 @@ public class DaoFactory {
     private DaoFactory() {
     }
 
-    public static DaoFactory getDaoFactory() {
+    public static synchronized DaoFactory getDaoFactory() {
         if (DaoFactory.instance == null) {
             DaoFactory.instance = new DaoFactory();
         }
@@ -18,7 +18,7 @@ public class DaoFactory {
         return new TreatmentDao(ConnectionBuilder.getConnection());
     }
 
-    public PatientDao createPatientDAO() {
+    public PatientDao createPatientDao() {
         return new PatientDao(ConnectionBuilder.getConnection());
     }
 }
