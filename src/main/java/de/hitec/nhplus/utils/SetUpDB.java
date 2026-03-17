@@ -40,8 +40,8 @@ public class SetUpDB {
      */
     public static void wipeDb(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.execute("DROP TABLE patient");
-            statement.execute("DROP TABLE treatment");
+            statement.execute("DROP TABLE IF EXISTS treatment");
+            statement.execute("DROP TABLE IF EXISTS patient");
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
         }
@@ -55,7 +55,7 @@ public class SetUpDB {
                 "   dateOfBirth TEXT NOT NULL, " +
                 "   carelevel TEXT NOT NULL, " +
                 "   roomnumber TEXT NOT NULL, " +
-                "   assets TEXt NOT NULL" +
+                "   assets TEXT NOT NULL" +
                 ");";
         try (Statement statement = connection.createStatement()) {
             statement.execute(SQL);
@@ -86,7 +86,7 @@ public class SetUpDB {
 
     private static void setUpPatients() {
         try {
-            PatientDao dao = DaoFactory.getDaoFactory().createPatientDAO();
+            PatientDao dao = DaoFactory.getDaoFactory().createPatientDao();
             dao.create(new Patient("Seppl", "Herberger", convertStringToLocalDate("1945-12-01"), "4", "202", "vermögend"));
             dao.create(new Patient("Martina", "Gerdsen", convertStringToLocalDate("1954-08-12"), "5", "010", "arm"));
             dao.create(new Patient("Gertrud", "Franzen", convertStringToLocalDate("1949-04-16"), "3", "002", "normal"));
