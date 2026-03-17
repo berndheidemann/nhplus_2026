@@ -13,32 +13,43 @@ public abstract class DaoImp<T> implements Dao<T> {
 
     @Override
     public void create(T t) throws SQLException {
-        getCreateStatement(t).executeUpdate();
+        try (PreparedStatement statement = getCreateStatement(t)) {
+            statement.executeUpdate();
+        }
     }
 
     @Override
     public T read(long key) throws SQLException {
         T object = null;
-        ResultSet result = getReadByIDStatement(key).executeQuery();
-        if (result.next()) {
-            object = getInstanceFromResultSet(result);
+        try (PreparedStatement statement = getReadByIDStatement(key);
+             ResultSet result = statement.executeQuery()) {
+            if (result.next()) {
+                object = getInstanceFromResultSet(result);
+            }
         }
         return object;
     }
 
     @Override
     public List<T> readAll() throws SQLException {
-        return getListFromResultSet(getReadAllStatement().executeQuery());
+        try (PreparedStatement statement = getReadAllStatement();
+             ResultSet result = statement.executeQuery()) {
+            return getListFromResultSet(result);
+        }
     }
 
     @Override
     public void update(T t) throws SQLException {
-        getUpdateStatement(t).executeUpdate();
+        try (PreparedStatement statement = getUpdateStatement(t)) {
+            statement.executeUpdate();
+        }
     }
 
     @Override
     public void deleteById(long key) throws SQLException {
-        getDeleteStatement(key).executeUpdate();
+        try (PreparedStatement statement = getDeleteStatement(key)) {
+            statement.executeUpdate();
+        }
     }
 
     protected abstract T getInstanceFromResultSet(ResultSet set) throws SQLException;
