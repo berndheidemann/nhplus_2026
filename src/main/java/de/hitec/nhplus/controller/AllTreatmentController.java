@@ -92,7 +92,7 @@ public class AllTreatmentController {
         patientSelection.clear();
         patientSelection.add("alle");
 
-        PatientDao dao = DaoFactory.getDaoFactory().createPatientDAO();
+        PatientDao dao = DaoFactory.getDaoFactory().createPatientDao();
         try {
             patientList = (ArrayList<Patient>) dao.readAll();
             for (Patient patient: patientList) {
@@ -143,15 +143,6 @@ public class AllTreatmentController {
         return null;
     }
 
-    private Patient searchInList(String surname) {
-        for (Patient patient : this.patientList) {
-            if (patient.getSurname().equals(surname)) {
-                return patient;
-            }
-        }
-        return null;
-    }
-
     @FXML
     public void handleDelete() {
         int index = this.tableView.getSelectionModel().getSelectedIndex();
@@ -166,28 +157,34 @@ public class AllTreatmentController {
 
     @FXML
     public void handleNewTreatment() {
-        try{
-            String selectedPatient = this.comboBoxPatientSelection.getSelectionModel().getSelectedItem();
-            Patient patient = searchInList(selectedPatient);
-            newTreatmentWindow(patient);
-        } catch (NullPointerException exception){
+        String selectedPatient = this.comboBoxPatientSelection.getSelectionModel().getSelectedItem();
+        if (selectedPatient == null || selectedPatient.equals("alle")) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information");
             alert.setHeaderText("Patient für die Behandlung fehlt!");
             alert.setContentText("Wählen Sie über die Combobox einen Patienten aus!");
             alert.showAndWait();
+            return;
         }
+        Patient patient = getPatientFromDisplayName(selectedPatient);
+        if (patient == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("Patient nicht gefunden!");
+            alert.setContentText("Der ausgewählte Patient konnte nicht gefunden werden.");
+            alert.showAndWait();
+            return;
+        }
+        newTreatmentWindow(patient);
     }
 
     @FXML
     public void handleMouseClick() {
-        tableView.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2 && (tableView.getSelectionModel().getSelectedItem() != null)) {
-                int index = this.tableView.getSelectionModel().getSelectedIndex();
-                Treatment treatment = this.treatments.get(index);
-                treatmentWindow(treatment);
-            }
-        });
+        if (tableView.getSelectionModel().getSelectedItem() != null) {
+            int index = this.tableView.getSelectionModel().getSelectedIndex();
+            Treatment treatment = this.treatments.get(index);
+            treatmentWindow(treatment);
+        }
     }
 
     public void newTreatmentWindow(Patient patient) {
