@@ -2,8 +2,6 @@
 
 > **Themen:** DAO-Pattern, MVP-Pattern, Singleton-Pattern, generische Klassen, JDBC
 >
-> **Sozialform:** Gruppenarbeit (2-3 Personen), Ergebnisse im Plenum vorstellen
->
 > **Zeitrahmen:** ~4 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**

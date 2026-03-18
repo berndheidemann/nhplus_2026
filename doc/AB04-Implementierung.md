@@ -2,8 +2,6 @@
 
 > **Thema:** Umsetzung der geplanten Module
 >
-> **Sozialform:** Gruppenarbeit (2-3 Personen), Arbeitsteilung nach User Stories
->
 > **Zeitrahmen:** ~8-12 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
@@ -63,7 +61,7 @@ Orientiert euch an folgenden Meilensteinen, um den Fortschritt im Blick zu behal
 | **M3: Login** | UStd 8-10 | Login-System funktionsfähig |
 | **M4: Integration** | UStd 11-12 | Alle Module zusammengeführt, erste manuelle Tests |
 
-> **Sprint-Review (Mitte AB 04):** Nach Meilenstein M2 stellt jede Gruppe dem Plenum ihren aktuellen Stand vor (5-10 Minuten pro Gruppe). Die anderen Gruppen geben Feedback. Das hilft, Probleme frühzeitig zu erkennen.
+> **Sprint-Review (Mitte AB 04):** Nach Meilenstein M2 sollte jede Gruppe ihren aktuellen Stand vorstellen können. Bereitet euch auf eine kurze Präsentation (5-10 Minuten) vor.
 
 ## Anforderungen
 

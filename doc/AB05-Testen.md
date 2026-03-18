@@ -2,8 +2,6 @@
 
 > **Thema:** Qualitätssicherung durch manuelle und automatisierte Tests
 >
-> **Sozialform:** Gruppenarbeit (2-3 Personen)
->
 > **Zeitrahmen:** ~3 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
@@ -14,7 +12,7 @@
 
 ## Aufgabe 1: Manuelle Tests durchführen
 
-Führt die Testfälle durch, die ihr in [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) definiert habt. Dokumentiert die Ergebnisse in der Datei [Testing.md](Testing.md) in folgender Tabellenform:
+Führt die Testfälle durch, die ihr in [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) definiert habt. Dokumentiert die Ergebnisse in der Datei einer eigenen Markdown-Datei (z.B. `Testing.md`) in eurem Repository in folgender Tabellenform:
 
 | Testfall | Beschreibung | Ergebnis | Bemerkung |
 |----------|-------------|----------|-----------|
@@ -34,7 +32,7 @@ Testet auch Szenarien, die über eure Testfälle aus AB 03 hinausgehen:
 - **Zusammenspiel:** Funktioniert das Löschen eines Patienten, der Behandlungen hat?
 - **Konsistenz:** Werden Änderungen sofort in der Datenbank gespeichert?
 
-Dokumentiert auch diese Tests in [Testing.md](Testing.md).
+Dokumentiert auch diese Tests in einer eigenen Markdown-Datei (z.B. `Testing.md`) in eurem Repository.
 
 ## Aufgabe 3: JUnit-Tests
 
@@ -48,7 +46,7 @@ Als Vorlage dient die Datei `src/test/java/de/hitec/nhplus/datastorage/PatientDa
 
 ## Aufgabe 4: Retrospektive
 
-Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in [Testing.md](Testing.md) fest:
+Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in einer eigenen Markdown-Datei (z.B. `Testing.md`) in eurem Repository fest:
 
 1. **Was lief gut** bei der Umsetzung der Lernsituation?
 2. **Was war die größte Hürde?**
@@ -61,8 +59,7 @@ Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in [Testing
 
 - [AB 03 — User Stories & Testfälle](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) — eure definierten Testfälle
 - [AB 04 — Implementierung](AB04-Implementierung.md) — der zu testende Code
-- [Testing.md](Testing.md) — hier dokumentiert ihr eure Testergebnisse
 
 ---
 
-*Zurück zur [Projekt-Übersicht](README.md)*
+*Zurück zur [Projekt-Übersicht](../README.md)*

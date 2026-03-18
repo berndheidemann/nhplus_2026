@@ -31,9 +31,16 @@ Die Lernsituation besteht aus fünf Arbeitsblättern, die aufeinander aufbauen:
 
 ## Erste Schritte
 
-1. **Projekt in IntelliJ öffnen** und die Anwendung über den Run-Button starten. Klickt euch durch und findet heraus, was die App kann.
-2. **Arbeitsblätter der Reihe nach bearbeiten** — beginnt mit [AB 01](doc/AB01-Analyse-der-Architektur.md).
-3. Bei technischen Fragen zu IntelliJ, SQLite, SceneBuilder oder module-info: siehe [Technische Referenz](doc/Technische-Referenz.md).
+1. **Git-Repository anlegen:** Forkt oder klont dieses Repository in eurer Gruppe. Hinterlegt den Link zu eurem Repository in **Its-Learning**.
+2. **Projekt in IntelliJ öffnen** und die Anwendung über den Run-Button starten. Klickt euch durch und findet heraus, was die App kann.
+3. **Arbeitsblätter der Reihe nach bearbeiten** — beginnt mit [AB 01](doc/AB01-Analyse-der-Architektur.md).
+4. Bei technischen Fragen zu IntelliJ, SQLite, SceneBuilder oder module-info: siehe [Technische Referenz](doc/Technische-Referenz.md).
+
+## Ergebnisse dokumentieren
+
+Dokumentiert die Ergebnisse jeder Phase als **Markdown** in eurem Repository. Schreibt eure Antworten **direkt in die Aufgaben-Markdowns** im `doc/`-Ordner oder verlinkt von dort auf eigene Dateien.
+
+> **Hinweis:** Bereitet euch darauf vor, eure Ergebnisse bei Bedarf im Plenum vorzustellen.
 
 ## Projektstruktur
 

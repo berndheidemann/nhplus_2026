@@ -2,8 +2,6 @@
 
 > **Thema:** DSGVO im Kontext einer Pflegeheim-Anwendung
 >
-> **Sozialform:** Arbeitsteilung in der Gruppe — ein Gruppenmitglied kann parallel zu AB01 recherchieren
->
 > **Zeitrahmen:** ~2-3 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**

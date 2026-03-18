@@ -2,8 +2,6 @@
 
 > **Thema:** Planung der Erweiterung von NHPlus
 >
-> **Sozialform:** Gruppenarbeit (2-3 Personen)
->
 > **Zeitrahmen:** ~3-4 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
