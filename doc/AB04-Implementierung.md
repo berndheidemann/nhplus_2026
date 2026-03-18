@@ -22,6 +22,18 @@ Setzt die User Stories aus [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Te
 
 Weitere DSGVO-User-Stories aus AB 03, die ihr nicht mehr umsetzt, bleiben als dokumentierte Planung stehen.
 
+### Hinweis zum Login-System
+
+Für das Login-System benötigt ihr:
+
+- Eine neue Tabelle `user` in der Datenbank mit mindestens den Spalten `username` und `password_hash`.
+- **Passwörter dürfen nicht im Klartext gespeichert werden!** Verwendet Hashing (z.B. SHA-256 mit Salt). Recherchiert dazu `MessageDigest` in Java.
+- Eine neue FXML-View `LoginView.fxml` mit zwei Eingabefeldern (Benutzername, Passwort) und einem Login-Button.
+- Einen `LoginController`, der die Eingabe gegen die Datenbank prüft.
+- Das Login-Fenster wird **vor** dem Hauptfenster geladen. Erst nach erfolgreicher Anmeldung wird das Hauptfenster geöffnet.
+
+> **Tipp:** Beginnt mit einer einfachen Variante und erweitert schrittweise. Ein funktionierendes Login mit SHA-256 ist besser als ein geplantes, aber nicht umgesetztes System mit BCrypt.
+
 ## Orientierung
 
 Die bestehenden Klassen dienen euch als Vorlage — studiert sie, bevor ihr eigene Module entwickelt:
@@ -40,10 +52,24 @@ Denkt außerdem an:
 - `SetUpDB` — erweitert die Klasse um Testdaten für eure neuen Tabellen.
 - `MainWindowController` — bindet eure neuen Views in die Navigation ein.
 
+## Meilensteine
+
+Orientiert euch an folgenden Meilensteinen, um den Fortschritt im Blick zu behalten:
+
+| Meilenstein | Zeitrahmen | Deliverable |
+|---|---|---|
+| **M1: Datenschicht** | UStd 1-3 | Model-Klasse + DAO + DB-Tabelle + Testdaten in SetUpDB |
+| **M2: Oberfläche** | UStd 4-7 | FXML-View + Controller + Navigation im Hauptfenster |
+| **M3: Login** | UStd 8-10 | Login-System funktionsfähig |
+| **M4: Integration** | UStd 11-12 | Alle Module zusammengeführt, erste manuelle Tests |
+
+> **Sprint-Review (Mitte AB 04):** Nach Meilenstein M2 stellt jede Gruppe dem Plenum ihren aktuellen Stand vor (5-10 Minuten pro Gruppe). Die anderen Gruppen geben Feedback. Das hilft, Probleme frühzeitig zu erkennen.
+
 ## Anforderungen
 
 - Jede implementierte User Story muss die **Akzeptanzkriterien aus AB 03** erfüllen.
 - Jedes Gruppenmitglied committet seinen eigenen Code (erkennbar in der Git-Historie).
+- **Empfehlung:** Erstellt für jede User Story einen eigenen Branch (`git checkout -b feature/pfleger-modul`). Merged fertige Features über Pull Requests in den `main`-Branch.
 
 ## Tipp
 
