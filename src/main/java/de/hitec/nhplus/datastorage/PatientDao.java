@@ -75,13 +75,13 @@ public class PatientDao extends DaoImp<Patient> {
     @Override
     protected Patient getInstanceFromResultSet(ResultSet result) throws SQLException {
         return new Patient(
-                result.getInt(1),
-                result.getString(2),
-                result.getString(3),
-                DateConverter.convertStringToLocalDate(result.getString(4)),
-                result.getString(5),
-                result.getString(6),
-                result.getString(7));
+                result.getInt("pid"),
+                result.getString("firstname"),
+                result.getString("surname"),
+                DateConverter.convertStringToLocalDate(result.getString("dateOfBirth")),
+                result.getString("carelevel"),
+                result.getString("roomnumber"),
+                result.getString("assets"));
     }
 
     /**
@@ -112,10 +112,15 @@ public class PatientDao extends DaoImp<Patient> {
     protected ArrayList<Patient> getListFromResultSet(ResultSet result) throws SQLException {
         ArrayList<Patient> list = new ArrayList<>();
         while (result.next()) {
-            LocalDate date = DateConverter.convertStringToLocalDate(result.getString(4));
-            Patient patient = new Patient(result.getInt(1), result.getString(2),
-                    result.getString(3), date,
-                    result.getString(5), result.getString(6), result.getString(7));
+            LocalDate date = DateConverter.convertStringToLocalDate(result.getString("dateOfBirth"));
+            Patient patient = new Patient(
+                    result.getInt("pid"),
+                    result.getString("firstname"),
+                    result.getString("surname"),
+                    date,
+                    result.getString("carelevel"),
+                    result.getString("roomnumber"),
+                    result.getString("assets"));
             list.add(patient);
         }
         return list;
