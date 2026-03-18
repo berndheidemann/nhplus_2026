@@ -16,14 +16,39 @@ Die Anforderung wird dabei in einem Satz und mit einfachen Worten beschrieben. S
 
 > **Als** \<User\> **möchte ich** \<Funktionalität\>, **um** \<Nutzen\> **zu erreichen.**
 
-Auf der Rückseite der Karte, auf der die User Story notiert wird, stehen die **Akzeptanzkriterien**. Sie legen die Kriterien oder Eigenschaften fest, wann eine User Story vollständig implementiert wurde. Die Akzeptanzkriterien sind wiederum die Grundlage, um:
+Zu jeder User Story gehören **Akzeptanzkriterien**. Sie legen fest, wann eine User Story vollständig implementiert wurde. Die Akzeptanzkriterien sind wiederum die Grundlage, um:
 
 1. die **Aufgaben (Tasks)** festzulegen, die nötig sind, um die User Story umzusetzen, und
 2. die **Testfälle** abzuleiten, um die Implementierung der Story zu testen.
 
+In der Praxis werden User Stories heute meist in digitalen Tools verwaltet (z.B. Kanban-Boards, GitHub Issues oder Jira). Die Akzeptanzkriterien, Tasks und Testfälle werden dabei direkt der Story zugeordnet.
+
+### Häufiger Fehler
+
+User Stories beschreiben immer eine Funktionalität **aus Anwendersicht**, nicht aus Entwicklersicht:
+
+| So nicht | Besser |
+|---|---|
+| *Als Entwickler möchte ich eine Datenbanktabelle für Patienten anlegen.* | *Als Wohnbereichsleiter möchte ich die Daten meiner Patienten verwalten können.* |
+
+Die erste Variante beschreibt eine technische Aufgabe — das gehört in die **Tasks**, nicht in die User Story.
+
+### Tasks: Das richtige Abstraktionsniveau
+
+Tasks beschreiben **Arbeitspakete**, nicht die konkrete Lösung. Sie benennen, *was* zu tun ist, ohne die Implementierung vorwegzunehmen:
+
+| Zu spezifisch (vorweggenommen) | Angemessen (Arbeitspaket) |
+|---|---|
+| Modelklasse `Patient` erstellen, abgeleitet von `Person`, Konstruktoren mit und ohne ID | Modelklasse für Patienten erstellen |
+| `AllPatientView` erstellen: TableView mit Textfeldern, Button zum Hinzufügen und Löschen | Übersichts-View für Patienten erstellen |
+
+Die konkreten Klassen, Vererbungshierarchien und GUI-Elemente sind **Architekturentscheidungen**, die bei der Implementierung getroffen werden — nicht bei der Planung.
+
 ---
 
 ## 2) User Stories aus NHPlus
+
+> **Hinweis:** Die folgenden User Stories beschreiben die bereits implementierten Module von NHPlus. Sie dienen als Vorlage für eure eigenen User Stories in [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md). Beachtet, dass die Tasks in Story 1 auch einmalige Architektur-Aufgaben enthalten (DAO-Schicht, Datenbankverbindung), die für spätere Module nicht erneut anfallen.
 
 ### User Story 1: Patientenverwaltung
 
@@ -45,11 +70,11 @@ Auf der Rückseite der Karte, auf der die User Story notiert wird, stehen die **
 
 | Nr. | Task |
 |-----|------|
-| T_1 | Modelklasse `Patient` erstellen: abgeleitet von `Person`, Konstruktoren mit und ohne PatientenID. |
-| T_2 | Allgemein gültiges DAO erstellen: Interface `Dao` mit CRUD-Methoden (create, read, readAll, update, deleteByID), generischer Typ `T`. Implementierung durch die abstrakte Klasse `DAOImp`. DAO-Factory und `ConnectionBuilder` erstellen. `PatientDAO` erstellen. |
-| T_3 | Datenbank mit einer Tabelle `Patient` anlegen, die die Stammdaten der Patienten hält. |
-| T_4 | `AllPatientView` erstellen: TableView mit allen Patientendaten, darunter Textfelder zum Anlegen eines neuen Patienten, Button zum Hinzufügen und Löschen. |
-| T_5 | `AllPatientController` erstellen: stellt die Methoden zum Anzeigen der Patienten, Ändern, Löschen und Hinzufügen bereit. |
+| T_1 | Modelklasse für Patienten erstellen. |
+| T_2 | Datenzugriffsschicht (DAO) aufbauen: allgemeines DAO-Interface mit CRUD-Methoden, Basisimplementierung, Datenbankverbindung und Factory. Konkretes DAO für Patienten erstellen. |
+| T_3 | Datenbanktabelle für die Stammdaten der Patienten anlegen. |
+| T_4 | Übersichts-View für Patienten erstellen: tabellarische Anzeige aller Patientendaten mit Möglichkeit zum Anlegen, Ändern und Löschen. |
+| T_5 | Controller für die Patienten-Übersicht erstellen. |
 
 #### Testfälle (Auszug)
 
@@ -59,7 +84,7 @@ Auf der Rückseite der Karte, auf der die User Story notiert wird, stehen die **
 |---|---|
 | **Vorbedingung** | Der Nutzer hat im Hauptfenster der Anwendung die Option *Patienten/innen* ausgewählt. |
 | **Testschritte** | — |
-| **Erwartetes Ergebnis** | Es werden alle Patienten, die in der Datenbank gespeichert sind, mit ihrer ID, Nachnamen, Vornamen, Geburtsdatum, Pflegestufe und Raumnummer in einer TableView angezeigt. |
+| **Erwartetes Ergebnis** | Es werden alle Patienten, die in der Datenbank gespeichert sind, mit ihren vollständigen Daten (ID, Nachname, Vorname, Geburtsdatum, Pflegestufe, Raumnummer, Vermögensstand) in einer Übersicht angezeigt. |
 
 **TF2: Patientendaten ändern**
 
@@ -67,15 +92,15 @@ Auf der Rückseite der Karte, auf der die User Story notiert wird, stehen die **
 |---|---|
 | **Vorbedingung** | Der Nutzer hat im Hauptfenster der Anwendung die Option *Patienten/innen* ausgewählt. |
 | **Testschritte** | 1. Der User wählt per Doppelklick auf einen Nachnamen einen Patienten aus. 2. Der User ändert den Nachnamen. 3. Der User beendet die Eingabe mit der Entertaste. |
-| **Erwartetes Ergebnis** | 1. Der geänderte Nachname wird in der TableView angezeigt. 2. Der geänderte Nachname wurde in der Datenbank gespeichert. |
+| **Erwartetes Ergebnis** | 1. Der geänderte Nachname wird in der Übersicht angezeigt. 2. Der geänderte Nachname wurde in der Datenbank gespeichert. |
 
 **TF3: Patient anlegen**
 
 | | |
 |---|---|
 | **Vorbedingung** | Der Nutzer hat im Hauptfenster der Anwendung die Option *Patienten/innen* ausgewählt. |
-| **Testschritte** | 1. Der User hat den Nachnamen, Vornamen, Geburtsdatum, Pflegestufe und Raumnummer des anzulegenden Patienten in die dafür vorgesehenen Textfelder eingegeben. 2. Der User hat den Button *Hinzufügen* betätigt. |
-| **Erwartetes Ergebnis** | 1. Der neue Patient wird mit allen eingetragenen Daten sowie einer automatisch erstellten ID als letzter Eintrag in der TableView angezeigt. 2. Der neue Patient wurde in der Datenbank gespeichert. |
+| **Testschritte** | 1. Der User hat alle Stammdaten des anzulegenden Patienten in die dafür vorgesehenen Felder eingegeben. 2. Der User hat den Button *Hinzufügen* betätigt. |
+| **Erwartetes Ergebnis** | 1. Der neue Patient wird mit allen eingetragenen Daten sowie einer automatisch erstellten ID als letzter Eintrag in der Übersicht angezeigt. 2. Der neue Patient wurde in der Datenbank gespeichert. |
 
 ---
 
@@ -99,14 +124,32 @@ Auf der Rückseite der Karte, auf der die User Story notiert wird, stehen die **
 
 | Nr. | Task |
 |-----|------|
-| T_1 | Modelklasse `Treatment` erstellen: Konstruktoren mit und ohne TreatmentID. |
-| T_2 | `TreatmentDAO`-Klasse implementieren: abgeleitet von `DAOImp`; zusätzlich eine Methode, die alle Behandlungen anhand einer bestimmten PatientenID aus der DB bezieht, und eine Methode, die alle Behandlungen einer bestimmten PatientenID löscht. |
-| T_3 | In der Datenbank eine Tabelle `Treatment` mit einem Fremdschlüssel auf die Tabelle `Patient` anlegen. |
-| T_4 | `AllTreatmentView` erstellen: TableView mit den unter A_2 beschriebenen Behandlungsdaten, darunter ComboBox zur Auswahl der Patienten, Button zum Anlegen einer neuen Behandlung, Button zum Löschen einer Behandlung. |
-| T_5 | `NewTreatmentView` erstellen: zeigt Patient mit Vor- und Nachnamen an. Über Textfelder können die Daten einer Behandlung angegeben werden. Button zum Anlegen und zum Abbrechen. |
-| T_6 | `TreatmentView` erstellen: zeigt Patient mit vollem Namen und Pflegestufe an. Über Textfelder werden die Daten einer Behandlung angezeigt und können dort auch geändert werden. Button zum Ändern und zum Abbrechen. |
-| T_7 | Aktualisierung des `AllPatientController`: Beim Löschen eines Patienten werden dessen Behandlungen ebenfalls gelöscht. |
-| T_8 | Erstellen der Controller für die drei Views. |
+| T_1 | Modelklasse für Behandlungen erstellen. |
+| T_2 | DAO für Behandlungen implementieren, einschließlich Methoden zum Filtern und Löschen nach Patient. |
+| T_3 | Datenbanktabelle für Behandlungen anlegen (mit Fremdschlüssel auf die Patienten-Tabelle). |
+| T_4 | Übersichts-View für Behandlungen erstellen: tabellarische Anzeige mit Filtermöglichkeit nach Patient. |
+| T_5 | View zum Anlegen einer neuen Behandlung erstellen. |
+| T_6 | Detail-View für eine Behandlung erstellen: Anzeige und Bearbeitung aller Behandlungsdaten. |
+| T_7 | Beim Löschen eines Patienten dessen Behandlungen ebenfalls löschen. |
+| T_8 | Controller für die Behandlungs-Views erstellen. |
+
+#### Testfälle (Auszug)
+
+**TF1: Behandlungen eines Patienten anzeigen**
+
+| | |
+|---|---|
+| **Vorbedingung** | Der Nutzer hat im Hauptfenster die Option *Behandlungen* ausgewählt. |
+| **Testschritte** | Der User wählt in der Auswahlliste einen Patienten aus. |
+| **Erwartetes Ergebnis** | Es werden nur die Behandlungen des ausgewählten Patienten in der Übersicht angezeigt. Bei Auswahl von „alle" werden wieder alle Behandlungen angezeigt. |
+
+**TF2: Behandlung ohne Patientenauswahl anlegen**
+
+| | |
+|---|---|
+| **Vorbedingung** | Der Nutzer hat im Hauptfenster die Option *Behandlungen* ausgewählt. Kein Patient ist in der Auswahlliste ausgewählt. |
+| **Testschritte** | Der User klickt auf den Button zum Anlegen einer neuen Behandlung. |
+| **Erwartetes Ergebnis** | Es erscheint eine Fehlermeldung, die darauf hinweist, dass zuerst ein Patient ausgewählt werden muss. |
 
 ---
 

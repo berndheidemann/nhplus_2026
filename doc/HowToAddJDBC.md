@@ -1,4 +1,4 @@
-# JDBC (Java Database Conectivity) Treiber für SQLite einbinden
+# JDBC (Java Database Connectivity) Treiber für SQLite einbinden
 
 1. `F4` oder mit einem Rechtsklick auf das Wurzelverzeichnis im Projektbaum das Kontextmenü öffnen und `Open Module Settings`
 2. `Project Settings / Libraries` auswählen

@@ -27,7 +27,7 @@ NHPlus soll um ein vollständiges Modul zur Verwaltung von Pflegekräften erweit
 
 ### 2. Datenschutz-Fixes
 
-Für **jeden Verstoß**, den ihr in [AB 02](AB02-Datenschutzanalyse.md) identifiziert habt, erstellt ihr eine User Story, die den Verstoß behebt.
+Für **drei Verstöße**, die ihr in [AB 02](AB02-Datenschutzanalyse.md) identifiziert habt, erstellt ihr eine User Story, die den Verstoß behebt. Eine davon muss die bisher fehlende Zugangsbeschränkung behandeln.
 
 ---
 

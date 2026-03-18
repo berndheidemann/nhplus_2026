@@ -71,6 +71,43 @@ Orientiert euch an folgenden Meilensteinen, um den Fortschritt im Blick zu behal
 - Jedes Gruppenmitglied committet seinen eigenen Code (erkennbar in der Git-Historie).
 - **Empfehlung:** Erstellt für jede User Story einen eigenen Branch (`git checkout -b feature/pfleger-modul`). Merged fertige Features über Pull Requests in den `main`-Branch.
 
+## Javadoc
+
+Dokumentiert jede Klasse, die ihr neu erstellt, mit Javadoc. Orientiert euch an `PatientDao.java` — dort seht ihr, wie gute Javadoc aussieht.
+
+**Was muss dokumentiert werden?**
+
+| Element | Javadoc nötig? | Was beschreiben? |
+|---|---|---|
+| Klasse | Ja | Zweck und Verantwortung der Klasse |
+| Konstruktor (public) | Ja | Was initialisiert wird, `@param` für jeden Parameter |
+| Methode (public) | Ja | Was sie tut, `@param`, `@return`, `@throws` |
+| Getter/Setter | Nein | Nur wenn das Feld erklärungsbedürftig ist |
+
+**Beispiel:**
+
+```java
+/**
+ * Provides database access for {@link Caregiver} objects.
+ * Implements CRUD operations using the DAO pattern.
+ */
+public class CaregiverDao extends DaoImp<Caregiver> {
+
+    /**
+     * Generates a <code>PreparedStatement</code> to persist a new caregiver.
+     *
+     * @param caregiver Object of class <code>Caregiver</code> to persist.
+     * @return <code>PreparedStatement</code> to insert the given caregiver.
+     */
+    @Override
+    protected PreparedStatement getCreateStatement(Caregiver caregiver) {
+        // ...
+    }
+}
+```
+
+> **Tipp:** Wenn ihr beim Dokumentieren merkt, dass eine Klasse oder Methode mehrere Aufgaben hat — ändert es! Javadoc hilft nicht nur den Lesern, sondern auch euch, Designprobleme zu erkennen.
+
 ## Tipp
 
 Fangt mit dem **Model** und dem **DAO** an. Wenn die Datenhaltung funktioniert, baut die **View** und den **Controller**.
@@ -82,7 +119,7 @@ Fangt mit dem **Model** und dem **DAO** an. Wenn die Datenhaltung funktioniert, 
 - [AB 03 — User Stories & Planung](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) — eure User Stories und Tasks
 - [AB 01 — Analyse der Architektur](AB01-Analyse-der-Architektur.md) — Architekturverständnis
 - [MVP in JavaFX](MVP%20in%20JavaFX.md) — Zusammenspiel von View, Model und Presenter
-- [Projekt-README](README.md) — Hinweise zu Datenbank, SceneBuilder, module-info
+- [Technische Referenz](Technische-Referenz.md) — Hinweise zu Datenbank, SceneBuilder, module-info
 
 ---
 

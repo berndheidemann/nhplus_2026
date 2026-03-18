@@ -1,7 +1,7 @@
 # MVP-Pattern allgemein
 
 <div style="display: flex; align-items: center;">
-  <p style="text-align: justify;">Das MVP-Entwurfsmuster ist eine Abwandlung des MVC (Model-View-Controller). Es trennt das Model komplett von dessen Ansicht in der View und verbindet beide Schichten über einen sogenannten Presenter. Über eine sehr strenge Trennung der Schichten wird die Anwendung besser testbar und wartbar. Das Model definiert die in der View anzuzeigenden Daten. Es kann auch die Geschäftslogik der Anwendung enthalten. Die View ist lediglich für die Anzeige der Daten in der GUI zuständig. Sie enthält keinerlei Geschäfts- oder Anzeigenlogik, sondern nimmt Benutzeranforderungen des Benutzers entgegen und gibt sie an den Presenter weiter. Der Presenter interagiert zwischen Model und View, indem er auf die ihm übergebenen Ereignisse reagiert, das Model liest, aktualisiert und in umgekehrter Richtung dafür sorgt, dass die Daten in der View aktualisiert dargestellt werden. Zu jeder View gibt es immer nur einen Presenter, der in der View initiiert wird.  Normalerweise sind View und Presenter über ein Interface voneinander entkoppelt.</p>
+  <p style="text-align: justify;">Das MVP-Entwurfsmuster ist eine Abwandlung des MVC (Model-View-Controller). Es trennt das Model komplett von dessen Ansicht in der View und verbindet beide Schichten über einen sogenannten Presenter. Über eine sehr strenge Trennung der Schichten wird die Anwendung besser testbar und wartbar. Das Model definiert die in der View anzuzeigenden Daten. Es kann auch die Geschäftslogik der Anwendung enthalten. Die View ist lediglich für die Anzeige der Daten in der GUI zuständig. Sie enthält keinerlei Geschäfts- oder Anzeigenlogik, sondern nimmt die Anforderungen des Benutzers entgegen und gibt sie an den Presenter weiter. Der Presenter interagiert zwischen Model und View, indem er auf die ihm übergebenen Ereignisse reagiert, das Model liest, aktualisiert und in umgekehrter Richtung dafür sorgt, dass die Daten in der View aktualisiert dargestellt werden. Zu jeder View gibt es immer nur einen Presenter, der in der View initiiert wird.  Normalerweise sind View und Presenter über ein Interface voneinander entkoppelt.</p>
   <img src="media/mvp.png" style="width: 400px; margin-right: 20px;">
 </div>
 
@@ -52,7 +52,7 @@
 AllPatientController controller = loader.getController();
 ```
 
-<p style="text-align: justify;">Dabei wird automatisch die Methode initialize() aus der Klasse AllPatientController aufgerufen. Diese muss nur explizit aufgerufen werden, sofern sie vom Presenter überladen wird, ihr Aufruf also Parameter erfordert.</p>
+<p style="text-align: justify;">Dabei wird automatisch die Methode initialize() aus der Klasse AllPatientController aufgerufen. Diese muss nur explizit aufgerufen werden, sofern sie vom Presenter überschrieben wird, ihr Aufruf also Parameter erfordert.</p>
 
 <p style="text-align: justify;">Um die 1:1-Beziehung des Presenters zur View zu realisieren, wird jedes Steuerungselement, auf das der Presenter Zugriff benötigt, als Instanzvariable deklariert und mit der Annotation FXML versehen; am Beispiel des oben schon erwähnten Buttons Hinzufügen und des  Textfeldes, das den Nachnamen anzeigt:</p>
 
@@ -63,7 +63,7 @@ Button btnAdd;
 @FXML
 TextField txtSurname;
 ```
-<p style="text-align: justify;">Auch die Methoden, die ausgeführt werden sollen, sobald der Benutzer ein bestimmtes Ereignis auf der View auslöst, müssen mit der Annotation FXML versehen werden. Im unten abgebildeten Beispiel werden zunächst aus den Textfeldern der GUI - die im Presenter also alle als Instanzvariablen mit dem Bezeichner der im Scene Builder angegebenen fx-id und mit der Annotation FXML deklariert sein müssen - mithilfe der Methode getText() die in der View eingetragenen Strings ausgelesen. Im zweiten Schritt wird ein neues Patientenobjekt erstellt und mithilfe des DAOs in die Datenbank geschrieben. Zuletzt wird die Anzeige der View aktualisiert. Das geschieht hier (zugegeben ein wenig inperformant), indem alle Patienten erneut aus der Datenbank gelesen werden, in der TableView angezeigt und die Textfelder zum Anlegen eines neuen Patienten wieder geleert werden.</p>
+<p style="text-align: justify;">Auch die Methoden, die ausgeführt werden sollen, sobald der Benutzer ein bestimmtes Ereignis auf der View auslöst, müssen mit der Annotation FXML versehen werden. Im unten abgebildeten Beispiel werden zunächst aus den Textfeldern der GUI - die im Presenter also alle als Instanzvariablen mit dem Bezeichner der im Scene Builder angegebenen fx-id und mit der Annotation FXML deklariert sein müssen - mithilfe der Methode getText() die in der View eingetragenen Strings ausgelesen. Im zweiten Schritt wird ein neues Patientenobjekt erstellt und mithilfe des DAOs in die Datenbank geschrieben. Zuletzt wird die Anzeige der View aktualisiert. Das geschieht hier (zugegeben ein wenig ineffizient), indem alle Patienten erneut aus der Datenbank gelesen werden, in der TableView angezeigt und die Textfelder zum Anlegen eines neuen Patienten wieder geleert werden.</p>
 
 ```
 @FXML
@@ -86,7 +86,7 @@ public void handleAdd() {
     clearTextfields();
 }
 ```
-<p style="text-align: justify;">Der Presenter benötigt zur Anzeigensteuerung der View und zur Aktualisierung des Models Zugriff auf letzteres, in unserem Fall also auf alle Patientendaten. Patienten werden in unserer Anwendung durch eine übliche Javaklasse mit dem bezeichner Patient modelliert. Um die Patienten in einer TableView anzeigen zu lassen, verwendet der Presenter keine übliche Liste, sondern eine von JavaFX bereitgestellte ObservableList, die von der TableView gefordert wird:</p>
+<p style="text-align: justify;">Der Presenter benötigt zur Anzeigensteuerung der View und zur Aktualisierung des Models Zugriff auf letzteres, in unserem Fall also auf alle Patientendaten. Patienten werden in unserer Anwendung durch eine übliche Javaklasse mit dem Bezeichner Patient modelliert. Um die Patienten in einer TableView anzeigen zu lassen, verwendet der Presenter keine übliche Liste, sondern eine von JavaFX bereitgestellte ObservableList, die von der TableView gefordert wird:</p>
 
 ```
 private ObservableList<Patient> tableviewContent = FXCollections.observableArrayList();

@@ -6,10 +6,10 @@ Dieses Raster zeigt euch, woran eure Arbeit gemessen wird. Nutzt es zur Selbstko
 
 | Bereich | Gewichtung | Beschreibung |
 |---|---|---|
-| **Architekturverständnis** (AB 01) | 15% | Verständnis von DAO, MVP, Singleton; korrekte Erklärungen |
-| **DSGVO-Analyse** (AB 02) | 15% | Vollständigkeit der gefundenen Verstöße; korrekte Zuordnung zu DSGVO-Artikeln |
+| **Architekturverständnis** (AB 01) | 10% | Verständnis von DAO, MVP, Singleton; korrekte Erklärungen |
+| **DSGVO-Analyse** (AB 02) | 10% | Vollständigkeit der gefundenen Verstöße; korrekte Zuordnung zu DSGVO-Artikeln; Ableitung technischer Anforderungen |
 | **Planung** (AB 03) | 20% | Qualität der User Stories, Akzeptanzkriterien, Tasks und Testfälle; ER-Diagramm |
-| **Implementierung** (AB 04) | 35% | Funktionsfähigkeit, Code-Qualität, Einhaltung der Architektur |
+| **Implementierung** (AB 04) | 45% | Funktionsfähigkeit, Code-Qualität, Einhaltung der Architektur |
 | **Testen & Reflexion** (AB 05) | 15% | Testdokumentation, JUnit-Tests, Retrospektive |
 
 ## Detailkriterien Implementierung (AB 04)
