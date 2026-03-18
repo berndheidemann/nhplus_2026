@@ -10,6 +10,8 @@
 - User Stories mit Akzeptanzkriterien formulieren
 - aus User Stories konkrete Entwicklungs-Tasks ableiten
 - Testfälle aus Akzeptanzkriterien ableiten
+- ein einfaches ER-Diagramm für eine neue Entität erstellen
+- den Aufwand einer User Story grob einschätzen
 
 > **Hinweis:** Zum Aufbau und zur Formulierung von User Stories siehe das [Informationsblatt: User Stories](IB-User-Stories.md). Dort findet ihr auch vollständige Beispiele zu den bereits implementierten Modulen (Patienten, Behandlungen).
 
@@ -20,6 +22,8 @@ Plant innerhalb eurer Gruppe die Erweiterung von NHPlus. Dabei sind **zwei Berei
 ### 1. Pfleger-Verwaltung
 
 NHPlus soll um ein vollständiges Modul zur Verwaltung von Pflegekräften erweitert werden (vgl. AB01, Aufgabe 2). Erstellt dafür User Stories, die mindestens das Anlegen, Anzeigen, Ändern und Löschen von Pflegekräften abdecken.
+
+**Datenmodellierung:** Erstellt ein ER-Diagramm für die Pfleger-Tabelle und ihre Beziehung zu bestehenden Tabellen (Patient, Treatment). Leitet daraus das `CREATE TABLE`-Statement ab.
 
 ### 2. Datenschutz-Fixes
 
@@ -61,6 +65,15 @@ Für jede User Story ist die folgende Tabellenstruktur zu verwenden (für weiter
 | T_1 | |
 | T_2 | |
 | ... | |
+
+### Aufwandsschätzung
+
+| User Story | Geschätzte Stunden | Tatsächliche Stunden |
+|---|---|---|
+| US 1 | | *(nach AB 04 ausfüllen)* |
+| US 2 | | *(nach AB 04 ausfüllen)* |
+
+> **Hinweis:** Schätzt den Aufwand jeder User Story in Stunden. Am Ende von AB 04 tragt ihr die tatsächliche Zeit ein und vergleicht. Das Schätzen von Aufwänden ist eine wichtige Kompetenz in der Softwareentwicklung.
 
 ### Testfälle
 
