@@ -7,25 +7,18 @@
 > **Zeitrahmen:** ~2-3 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
-- die grundlegenden DSGVO-Bestimmungen für personenbezogene Daten und Gesundheitsdaten benennen
 - konkrete Datenschutzverstöße in einer bestehenden Anwendung identifizieren
 - technische Anforderungen für eine datenschutzkonforme Software ableiten
 
-## Aufgabe 1: DSGVO-Grundlagen
+## Vorbereitung: DSGVO-Grundlagen erarbeiten
 
-Recherchiere die grundlegenden Bestimmungen der DSGVO, die für NHPlus relevant sind. Beantworte dabei folgende Fragen:
+Bearbeite **zuerst** die interaktive DSGVO-Webapp, um die notwendigen Grundlagen zu erarbeiten:
 
-**a)** Was musst du bei der technischen Umsetzung der Speicherung von personenbezogenen Daten bedenken?
+> **https://berndheidemann.github.io/dsgvo/**
 
-**b)** Welche Rechte haben die Patienten bezogen auf ihre persönlichen Daten?
+Die dort vermittelten Inhalte bilden die Basis für die folgenden Aufgaben.
 
-**c)** Welche Rechte haben die Mitarbeiter/innen bezogen auf ihre persönlichen Daten?
-
-**d)** Gesundheitsdaten gelten laut Art. 9 DSGVO als „besondere Kategorien personenbezogener Daten". Welche zusätzlichen Anforderungen ergeben sich daraus?
-
-> **Hinweis:** Begründe deine Antworten jeweils mit kurzen Auszügen aus der DSGVO.
-
-## Aufgabe 2: Verstöße in NHPlus identifizieren
+## Aufgabe 1: Verstöße in NHPlus identifizieren
 
 Analysiere die Anwendung NHPlus und ihren Quellcode. Findet **alle Verstöße** gegen Datenschutzbestimmungen, die euch auffallen. Gebt dabei jeweils an:
 
@@ -33,9 +26,9 @@ Analysiere die Anwendung NHPlus und ihren Quellcode. Findet **alle Verstöße** 
 - **Wogegen** es verstößt (welcher DSGVO-Artikel)?
 - **Warum** es ein Problem ist.
 
-## Aufgabe 3: Technische Anforderungen ableiten
+## Aufgabe 2: Technische Anforderungen ableiten
 
-Leite aus deinen Erkenntnissen aus Aufgabe 1 und 2 **für jeden gefundenen Verstoß eine konkrete technische Anforderung** ab, die NHPlus erfüllen muss, um datenschutzkonform zu sein.
+Leite aus deinen Erkenntnissen aus der DSGVO-Webapp und Aufgabe 1 **für jeden gefundenen Verstoß eine konkrete technische Anforderung** ab, die NHPlus erfüllen muss, um datenschutzkonform zu sein.
 
 Formuliere die Anforderungen so, dass sie als Grundlage für User Stories in [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) dienen können.
 
