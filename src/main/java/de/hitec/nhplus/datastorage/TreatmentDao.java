@@ -76,11 +76,11 @@ public class TreatmentDao extends DaoImp<Treatment> {
      */
     @Override
     protected Treatment getInstanceFromResultSet(ResultSet result) throws SQLException {
-        LocalDate date = DateConverter.convertStringToLocalDate(result.getString(3));
-        LocalTime begin = DateConverter.convertStringToLocalTime(result.getString(4));
-        LocalTime end = DateConverter.convertStringToLocalTime(result.getString(5));
-        return new Treatment(result.getLong(1), result.getLong(2),
-                date, begin, end, result.getString(6), result.getString(7));
+        LocalDate date = DateConverter.convertStringToLocalDate(result.getString("treatment_date"));
+        LocalTime begin = DateConverter.convertStringToLocalTime(result.getString("begin"));
+        LocalTime end = DateConverter.convertStringToLocalTime(result.getString("end"));
+        return new Treatment(result.getLong("tid"), result.getLong("pid"),
+                date, begin, end, result.getString("description"), result.getString("remark"));
     }
 
     /**
@@ -112,11 +112,11 @@ public class TreatmentDao extends DaoImp<Treatment> {
     protected ArrayList<Treatment> getListFromResultSet(ResultSet result) throws SQLException {
         ArrayList<Treatment> list = new ArrayList<Treatment>();
         while (result.next()) {
-            LocalDate date = DateConverter.convertStringToLocalDate(result.getString(3));
-            LocalTime begin = DateConverter.convertStringToLocalTime(result.getString(4));
-            LocalTime end = DateConverter.convertStringToLocalTime(result.getString(5));
-            Treatment treatment = new Treatment(result.getLong(1), result.getLong(2),
-                    date, begin, end, result.getString(6), result.getString(7));
+            LocalDate date = DateConverter.convertStringToLocalDate(result.getString("treatment_date"));
+            LocalTime begin = DateConverter.convertStringToLocalTime(result.getString("begin"));
+            LocalTime end = DateConverter.convertStringToLocalTime(result.getString("end"));
+            Treatment treatment = new Treatment(result.getLong("tid"), result.getLong("pid"),
+                    date, begin, end, result.getString("description"), result.getString("remark"));
             list.add(treatment);
         }
         return list;
