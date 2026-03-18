@@ -40,7 +40,7 @@ Die Lernsituation besteht aus fünf Arbeitsblättern, die aufeinander aufbauen:
 
 Dokumentiert die Ergebnisse jeder Phase als **Markdown** in eurem Repository. Schreibt eure Antworten **direkt in die Aufgaben-Markdowns** im `doc/`-Ordner oder verlinkt von dort auf eigene Dateien.
 
-> **Hinweis:** Bereitet euch darauf vor, eure Ergebnisse bei Bedarf im Plenum vorzustellen.
+> **Hinweis:** Die Ergebnisse der einzelnen Phasen werden möglicherweise im Plenum vorgestellt. Bereitet euch entsprechend vor.
 
 ## Projektstruktur
 
