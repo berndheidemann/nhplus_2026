@@ -71,6 +71,4 @@ Worin liegt der Unterschied zu einer MVC-Architektur?
 
 ---
 
-*Voraussetzung: [AB 00 — Einstieg: JavaFX, JDBC und Git](AB00-Einstieg-JavaFX-JDBC-Git.md)*
-
 *Weiter mit [AB 02 — Datenschutzanalyse](AB02-Datenschutzanalyse.md)*
