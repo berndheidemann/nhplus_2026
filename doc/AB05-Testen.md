@@ -4,11 +4,12 @@
 >
 > **Sozialform:** Gruppenarbeit (2-3 Personen)
 >
-> **Zeitrahmen:** ~2-3 Unterrichtsstunden
+> **Zeitrahmen:** ~3 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
 - Testfälle systematisch durchführen und dokumentieren
 - zwischen manuellem und automatisiertem Testen unterscheiden
+- einen JUnit-Test für eine DAO-Klasse schreiben
 - die Qualität eurer Implementierung anhand der Akzeptanzkriterien überprüfen
 
 ## Aufgabe 1: Manuelle Tests durchführen
@@ -35,13 +36,24 @@ Testet auch Szenarien, die über eure Testfälle aus AB 03 hinausgehen:
 
 Dokumentiert auch diese Tests in [Testing.md](Testing.md).
 
-## Aufgabe 3 (Zusatz): JUnit-Tests
+## Aufgabe 3: JUnit-Tests
 
 Schreibt mindestens **zwei JUnit-Tests** für eine eurer DAO-Klassen. Testet z.B.:
 - Einen neuen Datensatz anlegen und wieder auslesen (`create` + `read`)
 - Einen Datensatz löschen und prüfen, dass er nicht mehr existiert (`deleteById` + `read`)
 
+Als Vorlage dient die Datei `src/test/java/de/hitec/nhplus/datastorage/PatientDaoTest.java`. Dort seht ihr, wie ein DAO-Test aufgebaut wird.
+
 > **Hinweis:** JUnit 5 ist bereits als Dependency in der `pom.xml` eingebunden. Erstellt eure Testklassen im Verzeichnis `src/test/java/` in der gleichen Package-Struktur wie der zu testende Code.
+
+## Aufgabe 4: Retrospektive
+
+Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in [Testing.md](Testing.md) fest:
+
+1. **Was lief gut** bei der Umsetzung der Lernsituation?
+2. **Was war die größte Hürde?**
+3. **Aufwandsvergleich:** Vergleicht eure geschätzten Stunden aus AB 03 mit der tatsächlich benötigten Zeit. Wo lagt ihr daneben und warum?
+4. **Was würdet ihr beim nächsten Mal anders machen?**
 
 ---
 
