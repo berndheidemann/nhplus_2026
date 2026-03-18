@@ -11,6 +11,7 @@
 - begründen, warum Singleton und Factory-Pattern eingesetzt werden
 - den Ablauf im MVP-Pattern bei einer Benutzerinteraktion nachvollziehen
 - einschätzen, was nötig ist, um die Architektur um ein neues Modul zu erweitern
+- eine erste kleine Änderung an der bestehenden Codebasis vornehmen und testen
 
 ## Vorbereitung
 
@@ -48,6 +49,16 @@ Erkläre das Zusammenspiel der Klassen `Patient`, `AllPatientController` und `Al
 Erläutere, was genau in der View, im Model und im Presenter nacheinander abläuft. Der Ablauf zum Speichern des neuen Patienten muss nicht beschrieben werden (siehe Aufgabe 1).
 
 Worin liegt der Unterschied zu einer MVC-Architektur?
+
+### 5. Erste eigene Änderung
+
+Öffne die Klasse `SetUpDB` im Package `utils`. Füge in der Methode `setUpPatients()` einen weiteren Testpatienten mit frei gewählten Daten hinzu. Starte die Anwendung und überprüfe:
+
+- Erscheint der neue Patient in der Tabelle?
+- Wird er in der Datenbank gespeichert? (Prüfe über die IntelliJ-Datenbankansicht mit `SELECT * FROM patient`)
+
+> **Reflexion:** Welchen Weg nehmen die Daten vom `SetUpDB`-Aufruf bis zur Anzeige in der GUI?
+> Nutze deine Erkenntnisse aus den Aufgaben 1 und 4, um den Weg zu beschreiben.
 
 ---
 
