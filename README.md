@@ -24,7 +24,7 @@ Die Lernsituation besteht aus fünf Arbeitsblättern, die aufeinander aufbauen:
 | [AB 01](doc/AB01-Analyse-der-Architektur.md) | Analyse der Architektur | ~4 UStd | Bestehenden Code und Entwurfsmuster verstehen |
 | [AB 02](doc/AB02-Datenschutzanalyse.md) | Datenschutzanalyse | ~3-4 UStd | DSGVO-Grundlagen (Webapp) + Verstöße in NHPlus identifizieren |
 | [AB 03](doc/AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) | Planung | ~4-5 UStd | User Stories, Tasks und Testfälle erstellen |
-| [AB 04](doc/AB04-Implementierung.md) | Implementierung | ~10-14 UStd | Pfleger-Modul und Login-System entwickeln |
+| [AB 04](doc/AB04-Implementierung.md) | Implementierung | ~9-12 UStd | Pfleger-Modul und Login-System entwickeln |
 | [AB 05](doc/AB05-Testen.md) | Testen | ~3 UStd | Manuell und mit JUnit testen, Retrospektive |
 
 ## Gruppen
@@ -52,7 +52,7 @@ src/main/java/de/hitec/nhplus/
 ├── model/                     ← Datenmodelle (Patient, Treatment, ...)
 ├── datastorage/               ← Datenbankzugriff (DAO-Pattern)
 ├── controller/                ← Presenter/Controller (MVP-Pattern)
-└── utils/                     ← Hilfsfunktionen (DateConverter, SetUpDB)
+└── utils/                     ← Hilfsfunktionen (DateConverter, SetUpDB, PasswordUtil für AB 04)
 
 src/main/resources/de/hitec/nhplus/
 ├── MainWindowView.fxml        ← Hauptfenster

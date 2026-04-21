@@ -17,7 +17,7 @@ Dieses Raster zeigt euch, woran eure Arbeit gemessen wird. Nutzt es zur Selbstko
 | Kriterium | Sehr gut | Ausreichend | Nicht bestanden |
 |---|---|---|---|
 | **Pfleger-Modul** | Alle vier CRUD-User-Stories umgesetzt, alle Akzeptanzkriterien erfüllt | Grundfunktionen (Anlegen, Anzeigen) vorhanden, kleinere Mängel bei Ändern/Löschen | Modul fehlt oder nicht lauffähig |
-| **Login-System** | Passwort-Hashing mit Salt, Fehlermeldung bei falschem Login | Hashing vorhanden, aber ohne Salt oder nur einfaches SHA-256 | Kein Login **oder** Passwort im Klartext gespeichert |
+| **Login-System** | `PasswordUtil` korrekt integriert (Salt und Hash werden beim Anlegen gespeichert, Prüfung über `verify`), Fehlermeldung bei falschem Login, Leseauftrag inhaltlich sauber beantwortet | Login funktioniert grundsätzlich, aber Fehlermeldung fehlt oder der Leseauftrag ist lückenhaft | Kein Login **oder** Passwort im Klartext **oder** `PasswordUtil` ignoriert und eigenes, fehlerhaftes Hashing gebaut |
 | **Architekturkonformität** | Alle Patterns korrekt angewandt (DAO, MVP, Singleton) | Patterns erkennbar, kleinere Abweichungen | Patterns ignoriert, Code unstrukturiert |
 | **Code-Qualität** | Javadoc, sinnvolle Benennung, keine Code-Duplikation | Javadoc vorhanden, Code lesbar | Kein Javadoc, unverständlicher Code |
 | **Team-Workflow** | Feature-Branches pro Workstream, saubere Pull Requests, Kopplungspunkte sichtbar abgestimmt | Commits von allen Mitgliedern vorhanden, aber direkt auf `main` oder PR-Prozess lückenhaft | Keine oder nur ein Mitglied committet, kein erkennbarer Workflow |

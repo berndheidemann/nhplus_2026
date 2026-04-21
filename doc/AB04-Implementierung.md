@@ -2,7 +2,7 @@
 
 > **Thema:** Umsetzung der geplanten Module
 >
-> **Zeitrahmen:** ~10-14 Unterrichtsstunden
+> **Zeitrahmen:** ~9-12 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
 - eine bestehende Anwendung eigenständig um neue Module erweitern
@@ -24,13 +24,17 @@ Die beiden frei gewählten DSGVO-Stories aus AB 03 (ohne Login) bleiben als doku
 
 Für das Login-System benötigt ihr:
 
-- Eine neue Tabelle `user` in der Datenbank mit mindestens den Spalten `username` und `password_hash`.
-- **Passwörter dürfen nicht im Klartext gespeichert werden!** Verwendet Hashing (z.B. SHA-256 mit Salt). Recherchiert dazu `MessageDigest` in Java.
+- Eine neue Tabelle `user` in der Datenbank mit mindestens den Spalten `username`, `password_hash` und `salt`.
+- **Passwörter dürfen nicht im Klartext gespeichert werden!** Nutzt dafür die Hilfsklasse `utils/PasswordUtil.java`, die euch bereits vorbereitet wurde. Sie implementiert SHA-256 mit Salt.
 - Eine neue FXML-View `LoginView.fxml` mit zwei Eingabefeldern (Benutzername, Passwort) und einem Login-Button.
-- Einen `LoginController`, der die Eingabe gegen die Datenbank prüft.
+- Einen `LoginController`, der die Eingabe mit `PasswordUtil.verify(...)` gegen die Datenbank prüft.
 - Das Login-Fenster wird **vor** dem Hauptfenster geladen. Erst nach erfolgreicher Anmeldung wird das Hauptfenster geöffnet.
 
-> **Tipp:** Beginnt mit einer einfachen Variante und erweitert schrittweise. Ein funktionierendes Login mit SHA-256 ist besser als ein geplantes, aber nicht umgesetztes System mit BCrypt.
+> **Leseauftrag vor der Umsetzung:** Öffnet `PasswordUtil.java` und studiert den Javadoc-Kommentar sowie die drei öffentlichen Methoden. Beantwortet schriftlich:
+>
+> 1. Warum wird beim Anlegen eines neuen Nutzers ein zufälliger Salt erzeugt, statt einen festen Wert zu verwenden?
+> 2. Was würde passieren, wenn wir den Salt weglassen und nur `hash(password, "")` aufrufen? Warum wäre das gefährlich?
+> 3. Welche Alternative zu SHA-256 empfiehlt der Javadoc-Hinweis für Produktivsysteme, und warum?
 
 ## Orientierung
 
@@ -72,6 +76,11 @@ Das Pfleger-Modul und das Login-System lassen sich in eurer 3er-Gruppe parallel 
 
 > **Tipp:** B hängt von A ab (ohne DAO keine View mit Daten). Startet A zuerst, B kann parallel mit Stubs beginnen. C läuft komplett unabhängig — ideal für den dritten Workstream.
 
+**Vorhandene Stubs und Helfer** — diese Dateien sind bereits im Repository und erleichtern euch den Einstieg:
+
+- `src/main/resources/de/hitec/nhplus/AllCaregiverView.fxml` — FXML-Skelett für die Pfleger-Übersicht (Workstream B). Ergänzt `fx:controller` und die `onAction`/`onEditCommit`-Handler; orientiert euch am Header-Kommentar der Datei.
+- `src/main/java/de/hitec/nhplus/utils/PasswordUtil.java` — Hilfsklasse für Passwort-Hashing mit Salt (Workstream C). Siehe Leseauftrag weiter unten.
+
 ## Git-Workflow
 
 Ihr arbeitet zum ersten Mal ernsthaft im Team mit Git. Damit Merges nicht ins Chaos kippen, gilt die folgende **Merge-Choreographie**:
@@ -91,9 +100,9 @@ Orientiert euch an folgenden Meilensteinen, um den Fortschritt im Blick zu behal
 | Meilenstein | Zeitrahmen | Deliverable |
 |---|---|---|
 | **M1: Datenschicht** | UStd 1-3 | Model-Klasse + DAO + DB-Tabelle + Testdaten in SetUpDB |
-| **M2: Oberfläche** | UStd 4-8 | FXML-View + Controller + Navigation im Hauptfenster |
-| **M3: Login** | UStd 9-12 | Login-System funktionsfähig |
-| **M4: Integration** | UStd 13-14 | Alle Module zusammengeführt, erste manuelle Tests |
+| **M2: Oberfläche** | UStd 4-6 | FXML-View + Controller + Navigation im Hauptfenster |
+| **M3: Login** | UStd 7-10 | Login-System funktionsfähig |
+| **M4: Integration** | UStd 11-12 | Alle Module zusammengeführt, erste manuelle Tests |
 
 ## Anforderungen
 
