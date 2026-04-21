@@ -2,7 +2,7 @@
 
 > **Thema:** Umsetzung der geplanten Module
 >
-> **Zeitrahmen:** ~8-12 Unterrichtsstunden
+> **Zeitrahmen:** ~10-14 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
 - eine bestehende Anwendung eigenständig um neue Module erweitern
@@ -18,7 +18,7 @@ Setzt die User Stories aus [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Te
 1. **Pfleger-Modul vollständig implementieren** — alle User Stories zur Pfleger-Verwaltung müssen umgesetzt sein und die Akzeptanzkriterien erfüllen.
 2. **Login-System implementieren** — die Anwendung darf nur nach erfolgreicher Anmeldung nutzbar sein.
 
-Weitere DSGVO-User-Stories aus AB 03, die ihr nicht mehr umsetzt, bleiben als dokumentierte Planung stehen.
+Die beiden frei gewählten DSGVO-Stories aus AB 03 (ohne Login) bleiben als dokumentierte Planung stehen; ihre freiwillige Umsetzung wird im Bewertungsraster positiv berücksichtigt (siehe Zeile „Zusätzliche DSGVO-Umsetzung").
 
 ### Hinweis zum Login-System
 
@@ -52,6 +52,38 @@ Denkt außerdem an:
 - `SetUpDB` — erweitert die Klasse um Testdaten für eure neuen Tabellen.
 - `MainWindowController` — bindet eure neuen Views in die Navigation ein.
 
+## Workstream-Vorschlag
+
+Das Pfleger-Modul und das Login-System lassen sich in eurer 3er-Gruppe parallel entwickeln. Teilt die Arbeit so auf — jeder übernimmt einen Workstream:
+
+| Workstream | Inhalt | Typische Dateien |
+|---|---|---|
+| **A: Data Layer** | Pfleger-Model + DAO + DB-Tabelle + JUnit-Tests | `Caregiver.java`, `CaregiverDao.java`, `SetUpDB.java`, `CaregiverDaoTest.java` |
+| **B: UI Layer** | Pfleger-View (FXML) + Controller + Einbindung in die Navigation | `AllCaregiverView.fxml`, `AllCaregiverController.java`, Anpassungen in `MainWindowController` |
+| **C: Login-System** | User-Tabelle + Passwort-Hashing + LoginView + LoginController + Start-Reihenfolge | `User.java`, `UserDao.java`, `LoginView.fxml`, `LoginController.java`, Anpassungen in `Main.java` |
+
+**Kopplungspunkte** — diese Dateien werden von mehreren Workstreams berührt. Editiert sie nicht parallel! Sprecht euch ab, wer wann einen Merge in diese Dateien setzt:
+
+- `DaoFactory` (A und C ergänzen je eine Factory-Methode)
+- `MainWindowController` (B bindet die neue View ein)
+- `Main.java` (C ändert die Start-Reihenfolge)
+- `module-info.java` (bei neuen Packages)
+- `SetUpDB` (A und C ergänzen je Testdaten)
+
+> **Tipp:** B hängt von A ab (ohne DAO keine View mit Daten). Startet A zuerst, B kann parallel mit Stubs beginnen. C läuft komplett unabhängig — ideal für den dritten Workstream.
+
+## Git-Workflow
+
+Ihr arbeitet zum ersten Mal ernsthaft im Team mit Git. Damit Merges nicht ins Chaos kippen, gilt die folgende **Merge-Choreographie**:
+
+1. **Feature-Branch pro Workstream:** `git checkout -b feature/pfleger-dao` (A), `feature/pfleger-view` (B), `feature/login` (C).
+2. **Vor jedem Push:** `git pull --rebase origin main` — holt die letzten Änderungen und setzt eure Commits obendrauf.
+3. **Pull Request statt direktem Merge:** Eröffnet einen PR auf GitHub. Vor dem Merge prüft jemand aus der Gruppe, ob die Anwendung noch startet.
+4. **Kopplungspunkt-Regel:** Wer eine der oben genannten Kopplungs-Dateien anfasst, sagt das in der Gruppe an und merged zuerst. Erst danach ziehen die anderen den neuen Stand.
+5. **Kleine Commits, frühe Merges:** Nicht tagelang an einem Branch arbeiten. Je länger ein Branch lebt, desto aufwändiger der Merge.
+
+> **Bei Merge-Konflikt:** Nicht einfach `--theirs` oder `--ours` nehmen! Öffnet beide Versionen im IntelliJ-Merge-Tool und entscheidet bewusst, welche Änderung bleibt. Oft sind beide nötig.
+
 ## Meilensteine
 
 Orientiert euch an folgenden Meilensteinen, um den Fortschritt im Blick zu behalten:
@@ -59,17 +91,15 @@ Orientiert euch an folgenden Meilensteinen, um den Fortschritt im Blick zu behal
 | Meilenstein | Zeitrahmen | Deliverable |
 |---|---|---|
 | **M1: Datenschicht** | UStd 1-3 | Model-Klasse + DAO + DB-Tabelle + Testdaten in SetUpDB |
-| **M2: Oberfläche** | UStd 4-7 | FXML-View + Controller + Navigation im Hauptfenster |
-| **M3: Login** | UStd 8-10 | Login-System funktionsfähig |
-| **M4: Integration** | UStd 11-12 | Alle Module zusammengeführt, erste manuelle Tests |
-
-> **Sprint-Review (Mitte AB 04):** Nach Meilenstein M2 sollte jede Gruppe ihren aktuellen Stand vorstellen können. Bereitet euch auf eine kurze Präsentation (5-10 Minuten) vor.
+| **M2: Oberfläche** | UStd 4-8 | FXML-View + Controller + Navigation im Hauptfenster |
+| **M3: Login** | UStd 9-12 | Login-System funktionsfähig |
+| **M4: Integration** | UStd 13-14 | Alle Module zusammengeführt, erste manuelle Tests |
 
 ## Anforderungen
 
 - Jede implementierte User Story muss die **Akzeptanzkriterien aus AB 03** erfüllen.
 - Jedes Gruppenmitglied committet seinen eigenen Code (erkennbar in der Git-Historie).
-- **Empfehlung:** Erstellt für jede User Story einen eigenen Branch (`git checkout -b feature/pfleger-modul`). Merged fertige Features über Pull Requests in den `main`-Branch.
+- Arbeitet nach der Merge-Choreographie aus dem Abschnitt [Git-Workflow](#git-workflow) — Feature-Branches und Pull Requests sind Pflicht.
 
 ## Javadoc
 

@@ -2,7 +2,7 @@
 
 > **Thema:** DSGVO im Kontext einer Pflegeheim-Anwendung
 >
-> **Zeitrahmen:** ~2-3 Unterrichtsstunden
+> **Zeitrahmen:** ~3-4 Unterrichtsstunden (inkl. ~1 UStd für die DSGVO-Webapp)
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
 - konkrete Datenschutzverstöße in einer bestehenden Anwendung identifizieren

@@ -22,12 +22,14 @@ Die Lernsituation besteht aus fünf Arbeitsblättern, die aufeinander aufbauen:
 | AB | Thema | Zeitrahmen | Was ihr tut |
 |---|---|---|---|
 | [AB 01](doc/AB01-Analyse-der-Architektur.md) | Analyse der Architektur | ~4 UStd | Bestehenden Code und Entwurfsmuster verstehen |
-| [AB 02](doc/AB02-Datenschutzanalyse.md) | Datenschutzanalyse | ~2-3 UStd | DSGVO-Verstöße in NHPlus identifizieren |
-| [AB 03](doc/AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) | Planung | ~3-4 UStd | User Stories, Tasks und Testfälle erstellen |
-| [AB 04](doc/AB04-Implementierung.md) | Implementierung | ~8-12 UStd | Pfleger-Modul und Login-System entwickeln |
+| [AB 02](doc/AB02-Datenschutzanalyse.md) | Datenschutzanalyse | ~3-4 UStd | DSGVO-Grundlagen (Webapp) + Verstöße in NHPlus identifizieren |
+| [AB 03](doc/AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) | Planung | ~4-5 UStd | User Stories, Tasks und Testfälle erstellen |
+| [AB 04](doc/AB04-Implementierung.md) | Implementierung | ~10-14 UStd | Pfleger-Modul und Login-System entwickeln |
 | [AB 05](doc/AB05-Testen.md) | Testen | ~3 UStd | Manuell und mit JUnit testen, Retrospektive |
 
-> **Tipp:** AB 01 und AB 02 können in der Gruppe **parallel** bearbeitet werden — ein Mitglied analysiert die Architektur, ein anderes recherchiert den Datenschutz.
+## Gruppen
+
+Ihr arbeitet in **festen 3er-Gruppen über alle Arbeitsblätter**. 
 
 ## Erste Schritte
 

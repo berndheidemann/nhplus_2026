@@ -2,7 +2,7 @@
 
 > **Thema:** Planung der Erweiterung von NHPlus
 >
-> **Zeitrahmen:** ~3-4 Unterrichtsstunden
+> **Zeitrahmen:** ~4-5 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
 - User Stories mit Akzeptanzkriterien formulieren
@@ -25,7 +25,9 @@ NHPlus soll um ein vollständiges Modul zur Verwaltung von Pflegekräften erweit
 
 ### 2. Datenschutz-Fixes
 
-Für **jeweils drei Verstöße** aus jeder der drei Kategorien (a, b, c) aus [AB 02](AB02-Datenschutzanalyse.md) erstellt ihr eine User Story, die den Verstoß behebt. Eine davon muss die bisher fehlende Zugangsbeschränkung behandeln.
+Wählt aus euren DSGVO-Verstößen in [AB 02](AB02-Datenschutzanalyse.md) **drei besonders relevante** aus und erstellt pro Verstoß eine User Story, die ihn behebt. **Eine der drei Stories muss die bisher fehlende Zugangsbeschränkung behandeln** (Login-System).
+
+Begründet eure Auswahl in 2–3 Sätzen: Warum habt ihr gerade diese drei Verstöße priorisiert (Schadensrisiko, Aufwand, rechtliches Gewicht)? Priorisierung ist eine Kernkompetenz agiler Arbeit — nicht jede gute Idee wird auch umgesetzt.
 
 ---
 
