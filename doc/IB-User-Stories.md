@@ -23,15 +23,76 @@ Zu jeder User Story gehören **Akzeptanzkriterien**. Sie legen fest, wann eine U
 
 In der Praxis werden User Stories heute meist in digitalen Tools verwaltet (z.B. Kanban-Boards, GitHub Issues oder Jira). Die Akzeptanzkriterien, Tasks und Testfälle werden dabei direkt der Story zugeordnet.
 
-### Häufiger Fehler
+### Häufige Fehler
 
-User Stories beschreiben immer eine Funktionalität **aus Anwendersicht**, nicht aus Entwicklersicht:
+User Stories beschreiben eine Funktionalität **aus Anwendersicht** und benennen einen **echten Nutzen**. Die folgenden fünf Fehlerbilder tauchen regelmäßig auf:
+
+#### F1 — Entwicklersicht statt Anwendersicht
 
 | So nicht | Besser |
 |---|---|
 | *Als Entwickler möchte ich eine Datenbanktabelle für Patienten anlegen.* | *Als Wohnbereichsleiter möchte ich die Daten meiner Patienten verwalten können.* |
 
 Die erste Variante beschreibt eine technische Aufgabe — das gehört in die **Tasks**, nicht in die User Story.
+
+#### F2 — Rolle zu generisch
+
+| So nicht | Besser |
+|---|---|
+| *Als **User** möchte ich Patienten anlegen können…* | *Als **Wohnbereichsleiter** möchte ich Patienten anlegen können…* |
+
+„User" verrät nichts über Motivation und Berechtigung. Pflegekraft, Wohnbereichsleiter, Administrator und Patient haben unterschiedliche Bedürfnisse und Rechte — die Rolle muss das abbilden.
+
+#### F3 — UI-Element statt Funktionalität
+
+| So nicht | Besser |
+|---|---|
+| *…möchte ich einen **Button zum Exportieren**, um Daten exportieren zu können.* | *…möchte ich die Patientendaten als CSV exportieren können, um sie an das Abrechnungssystem zu übergeben.* |
+
+Ein Button ist ein Lösungsvorschlag, keine Anforderung. Die Story beschreibt *was* erreicht werden soll — ob das später ein Button, ein Menüpunkt oder ein Tastenkürzel wird, entscheidet die Implementierung.
+
+#### F4 — Nutzen trivial oder tautologisch
+
+| So nicht | Besser |
+|---|---|
+| *…um die Funktion **nutzen zu können**.* | *…um bei Schichtwechsel schnell zu erkennen, welche Patienten heute noch behandelt werden müssen.* |
+| *…um Patienten zu **verwalten**.* | *…um die Zimmerbelegung gemäß der Pflegestufen vornehmen zu können.* |
+
+Wenn der Nutzen nur die Funktionalität umformuliert, fehlt der Business Value. Fragt euch: *Warum sollte ein Unternehmen Geld dafür ausgeben?*
+
+#### F5 — Story zu groß („Epic")
+
+| So nicht | Besser (aufgesplittet) |
+|---|---|
+| *…möchte ich **das komplette Pflegekraft-Modul** haben…* | 1. *…Pflegekräfte in einer Übersicht sehen…* <br> 2. *…eine neue Pflegekraft anlegen…* <br> 3. *…eine Pflegekraft löschen…* |
+
+Eine Story, die mehrere Tage Arbeit erfordert und viele Akzeptanzkriterien sammelt, ist ein **Epic**. Splittet in Stories, die sich einzeln umsetzen und abnehmen lassen (siehe INVEST unten).
+
+### Qualitätscheck: INVEST
+
+Nach dem Schreiben einer User Story prüft ihr sie gegen die **INVEST-Kriterien** (Bill Wake, 2003). Eine gute Story erfüllt alle sechs — sonst umschreiben oder splitten.
+
+| Buchstabe | Kriterium | Prüffrage | Typischer Verstoß |
+|---|---|---|---|
+| **I** | **I**ndependent — unabhängig | Könnte diese Story allein umgesetzt werden, ohne auf eine andere zu warten? | *„Als Pfleger möchte ich mich einloggen"* setzt die Story zum Anlegen von Pflegern voraus → Reihenfolge dokumentieren oder zusammenlegen. |
+| **N** | **N**egotiable — verhandelbar | Ist die Story offen für Diskussion, oder wurde schon die Implementierung festgeschrieben? | *„…über ein Dropdown mit max. 5 Einträgen, Font Arial 12pt…"* → gehört in Akzeptanzkriterien/Design, nicht in die Story. |
+| **V** | **V**aluable — wertstiftend | Liefert die Umsetzung einen erkennbaren Nutzen für den Anwender oder das Unternehmen? | *„…um die Funktion zu nutzen"* → trivialer Nutzen, F4. |
+| **E** | **E**stimable — schätzbar | Könnt ihr den Aufwand grob in Stunden schätzen? | Wenn ihr antwortet *„keine Ahnung, hängt von zu vielen Dingen ab"* → Story ist zu unklar oder zu groß, splitten. |
+| **S** | **S**mall — klein genug | Passt die Umsetzung realistisch in 1–2 Arbeitstage pro Person? | Mehr als 5–7 Akzeptanzkriterien ist ein starkes Indiz für ein Epic, F5. |
+| **T** | **T**estable — testbar | Lassen sich aus den Akzeptanzkriterien konkrete Testfälle ableiten? | *„…soll benutzerfreundlich sein"* → nicht testbar. Besser: *„…maximal 3 Eingabefelder, Fehlermeldung bei leerem Feld"*. |
+
+**So wendet ihr den Check an:** Geht Story für Story durch. Wenn *ein* Kriterium nicht erfüllt ist, überarbeitet die Story — entweder konkretisieren (E, T), splitten (S, I) oder den Nutzen schärfen (V). Eine Story zu verwerfen ist kein Fehler, sondern Teil der Planung.
+
+### Akzeptanzkriterien: Nutzer-sichtbar, nicht implementierungs-technisch
+
+Akzeptanzkriterien beschreiben **beobachtbares Verhalten**, nicht Code-Interna:
+
+| So nicht | Besser |
+|---|---|
+| *Die Methode `savePatient()` gibt `true` zurück.* | *Nach Klick auf „Speichern" erscheint der Patient in der Übersicht und ist nach Neustart der Anwendung noch vorhanden.* |
+| *Das Passwort wird mit `MessageDigest` gehasht.* | *Nach dem Speichern eines neuen Nutzers ist das Passwort in der Datenbank nicht mehr im Klartext lesbar.* |
+
+Regel: Ein Akzeptanzkriterium soll für den Product Owner / Auftraggeber verständlich und nachprüfbar sein — auch ohne Blick in den Quellcode.
 
 ### Tasks: Das richtige Abstraktionsniveau
 

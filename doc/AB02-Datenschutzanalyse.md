@@ -13,7 +13,7 @@
 
 Bearbeitet **zuerst** die interaktive DSGVO-Webapp, um die notwendigen Grundlagen zu erarbeiten:
 
-> **https://berndheidemann.github.io/dsgvo/**
+> **https://berndheidemann.github.io/DSGVO-LF5/**
 
 Die dort vermittelten Inhalte bilden die Basis für die folgenden Aufgaben.
 
@@ -29,16 +29,15 @@ Analysiert die Anwendung NHPlus und ihren Quellcode. Untersucht die Anwendung da
 
 ### a) Sicherheitsmaßnahmen (Art. 32 DSGVO)
 
-Untersucht, welche technischen Schutzmaßnahmen vorhanden oder **nicht** vorhanden sind:
-
+Untersucht, welche technischen Schutzmaßnahmen vorhanden oder **nicht** vorhanden sind. Tragt eure Analyse hier ein.
 
 ### b) Grundprinzipien der Datenverarbeitung (Art. 5 DSGVO)
 
-Untersucht, ob die Anwendung die Grundprinzipien einhält:
+Untersucht, ob die Anwendung die Grundprinzipien einhält. Tragt eure Analyse hier ein.
 
 ### c) Betroffenenrechte (Art. 15-22 DSGVO)
 
-Untersucht, ob Patienten ihre Rechte ausüben können:
+Untersucht, ob Patienten ihre Rechte ausüben können. Tragt eure Analyse hier ein.
 
 ## Aufgabe 2: Technische Anforderungen ableiten
 
@@ -50,6 +49,7 @@ Formuliert die Anforderungen so, dass sie als Grundlage für User Stories in [AB
 
 ## Relevante Ressourcen
 
+- [Interaktive DSGVO-Webapp](https://berndheidemann.github.io/DSGVO-LF5/) (Grundlagen für die Analyse)
 - [AB 01 — Analyse der Architektur](AB01-Analyse-der-Architektur.md) (technischer Kontext)
 - [AB 03 — User Stories & Planung](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) (eure Anforderungen fließen hier ein)
 

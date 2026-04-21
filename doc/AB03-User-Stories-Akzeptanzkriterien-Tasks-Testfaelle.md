@@ -25,7 +25,7 @@ NHPlus soll um ein vollständiges Modul zur Verwaltung von Pflegekräften erweit
 
 ### 2. Datenschutz-Fixes
 
-Für **drei Verstöße**, die ihr in [AB 02](AB02-Datenschutzanalyse.md) identifiziert habt, erstellt ihr eine User Story, die den Verstoß behebt. Eine davon muss die bisher fehlende Zugangsbeschränkung behandeln.
+Für **jeweils drei Verstöße** aus jeder der drei Kategorien (a, b, c) aus [AB 02](AB02-Datenschutzanalyse.md) erstellt ihr eine User Story, die den Verstoß behebt. Eine davon muss die bisher fehlende Zugangsbeschränkung behandeln.
 
 ---
 
@@ -37,6 +37,19 @@ Für jede User Story:
 4. Leitet aus den Akzeptanzkriterien **Testfälle** ab.
 
 Teilt die User Stories so auf, dass **jedes Gruppenmitglied mindestens eine User Story verantwortet**.
+
+---
+
+## Qualitätscheck vor Abgabe
+
+Prüft jede User Story gegen die **INVEST-Kriterien** und die fünf typischen Fehlerbilder (F1–F5) aus dem [Informationsblatt User Stories](IB-User-Stories.md#qualitätscheck-invest). Tragt pro Story kurz ein, wie ihr die Kriterien erfüllt — oder begründet, warum ihr bewusst abweicht:
+
+| Story | I | N | V | E | S | T | Anmerkung |
+|---|---|---|---|---|---|---|---|
+| US 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| US 2 | | | | | | | |
+
+> **Mini-Peer-Review:** Lasst eine andere Gruppe *eine* eurer User Stories gegenlesen (F1–F5, INVEST). Notiert hier, was zurückkam und was ihr angepasst habt. 10 Minuten, hoher Lerneffekt.
 
 ---
 
@@ -70,8 +83,9 @@ Für jede User Story ist die folgende Tabellenstruktur zu verwenden (für weiter
 |---|---|---|
 | US 1 | | *(nach AB 04 ausfüllen)* |
 | US 2 | | *(nach AB 04 ausfüllen)* |
+| ... | | |
 
-> **Hinweis:** Schätzt den Aufwand jeder User Story in Stunden. Am Ende von AB 04 tragt ihr die tatsächliche Zeit ein und vergleicht. Das Schätzen von Aufwänden ist eine wichtige Kompetenz in der Softwareentwicklung.
+> **Hinweis:** Schätzt den Aufwand **jeder** User Story in Stunden — ergänzt für jede weitere Story eine Zeile. Am Ende von AB 04 tragt ihr die tatsächliche Zeit ein und vergleicht. Das Schätzen von Aufwänden ist eine wichtige Kompetenz in der Softwareentwicklung.
 
 ### Testfälle
 

@@ -43,6 +43,8 @@ Die bestehenden Klassen dienen euch als Vorlage — studiert sie, bevor ihr eige
 | **View** | `AllPatientView.fxml`, `AllTreatmentView.fxml` | Neue FXML-Views erstellen |
 | **Controller** | `AllPatientController.java`, `AllTreatmentController.java` | Neue Controller erstellen |
 
+> **Tipp zum Einstieg in FXML:** JavaFX und FXML haben wir nicht explizit behandelt. Öffnet `AllPatientView.fxml` im SceneBuilder und baut eure Pfleger-View analog auf — so seht ihr direkt, wie TableView, Textfelder und Buttons verdrahtet werden.
+
 Denkt außerdem an:
 
 - `DaoFactory` — registriert eure neuen DAOs dort.
