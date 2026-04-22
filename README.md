@@ -40,7 +40,7 @@ Ihr arbeitet in **festen 3er-Gruppen über alle Arbeitsblätter**.
 
 ## Ergebnisse dokumentieren
 
-Dokumentiert die Ergebnisse jeder Phase als **Markdown** in eurem Repository. Schreibt eure Antworten **direkt in die Aufgaben-Markdowns** im `doc/`-Ordner oder verlinkt von dort auf eigene Dateien.
+Eure Antworten tragt ihr in den vorbereiteten Templates im Ordner [`abgabe/`](abgabe/README.md) ein — eine Markdown-Datei pro Arbeitsblatt (`abgabe/AB01.md` – `abgabe/AB05.md`). Die Aufgabenstellungen selbst in `doc/` bleiben unverändert.
 
 > **Hinweis:** Die Ergebnisse der einzelnen Phasen werden möglicherweise im Plenum vorgestellt. Bereitet euch entsprechend vor.
 

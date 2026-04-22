@@ -30,7 +30,7 @@ Für das Login-System benötigt ihr:
 - Einen `LoginController`, der die Eingabe mit `PasswordUtil.verify(...)` gegen die Datenbank prüft.
 - Das Login-Fenster wird **vor** dem Hauptfenster geladen. Erst nach erfolgreicher Anmeldung wird das Hauptfenster geöffnet.
 
-> **Leseauftrag vor der Umsetzung:** Öffnet `PasswordUtil.java` und studiert den Javadoc-Kommentar sowie die drei öffentlichen Methoden. Beantwortet schriftlich:
+> **Leseauftrag vor der Umsetzung:** Öffnet `PasswordUtil.java` und studiert den Javadoc-Kommentar sowie die drei öffentlichen Methoden. Beantwortet die drei Fragen in [`abgabe/AB04.md`](../abgabe/AB04.md) (Abschnitt „Leseauftrag PasswordUtil"):
 >
 > 1. Warum wird beim Anlegen eines neuen Nutzers ein zufälliger Salt erzeugt, statt einen festen Wert zu verwenden?
 > 2. Was würde passieren, wenn wir den Salt weglassen und nur `hash(password, "")` aufrufen? Warum wäre das gefährlich?
