@@ -2,13 +2,15 @@
 
 Dieses Raster zeigt euch, woran eure Arbeit gemessen wird. Nutzt es zur Selbstkontrolle.
 
+> **Abgabeort:** Eure Ergebnisse zu den fünf Arbeitsblättern tragt ihr in [`abgabe/AB01.md`](../abgabe/AB01.md) – [`abgabe/AB05.md`](../abgabe/AB05.md) ein.
+
 ## Gesamtbewertung
 
 | Bereich | Gewichtung | Beschreibung |
 |---|---|---|
 | **Architekturverständnis** (AB 01) | 10% | Verständnis von DAO, MVP, Singleton; korrekte Erklärungen |
 | **DSGVO-Analyse** (AB 02) | 10% | Vollständigkeit der gefundenen Verstöße; korrekte Zuordnung zu DSGVO-Artikeln; Ableitung technischer Anforderungen |
-| **Planung** (AB 03) | 20% | Qualität der User Stories, Akzeptanzkriterien, Tasks und Testfälle; ER-Diagramm |
+| **Planung** (AB 03) | 20% | Qualität der User Stories, Akzeptanzkriterien, Tasks und Testfälle |
 | **Implementierung** (AB 04) | 45% | Funktionsfähigkeit, Code-Qualität, Einhaltung der Architektur |
 | **Testen & Reflexion** (AB 05) | 15% | Testdokumentation, JUnit-Tests, Retrospektive |
 

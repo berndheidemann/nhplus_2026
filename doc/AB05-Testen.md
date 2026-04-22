@@ -12,12 +12,7 @@
 
 ## Aufgabe 1: Manuelle Tests durchführen
 
-Führt die Testfälle durch, die ihr in [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) definiert habt. Dokumentiert die Ergebnisse in der Datei einer eigenen Markdown-Datei (z.B. `Testing.md`) in eurem Repository in folgender Tabellenform:
-
-| Testfall | Beschreibung | Ergebnis | Bemerkung |
-|----------|-------------|----------|-----------|
-| TF1 | Alle Pfleger anzeigen | Bestanden / Nicht bestanden | ggf. Fehlerdetails |
-| TF2 | ... | ... | ... |
+Führt die Testfälle durch, die ihr in [AB 03](AB03-User-Stories-Akzeptanzkriterien-Tasks-Testfaelle.md) definiert habt. Dokumentiert die Ergebnisse in [`abgabe/AB05.md`](../abgabe/AB05.md) — das Template enthält eine vorbereitete Tabelle.
 
 Für jeden **nicht bestandenen** Testfall:
 - Beschreibt das tatsächliche Verhalten.
@@ -32,7 +27,7 @@ Testet auch Szenarien, die über eure Testfälle aus AB 03 hinausgehen:
 - **Zusammenspiel:** Funktioniert das Löschen eines Patienten, der Behandlungen hat?
 - **Konsistenz:** Werden Änderungen sofort in der Datenbank gespeichert?
 
-Dokumentiert auch diese Tests in einer eigenen Markdown-Datei (z.B. `Testing.md`) in eurem Repository.
+Dokumentiert diese Tests ebenfalls in [`abgabe/AB05.md`](../abgabe/AB05.md).
 
 ## Aufgabe 3: JUnit-Tests
 
@@ -46,11 +41,11 @@ Als Vorlage dient die Datei `src/test/java/de/hitec/nhplus/datastorage/PatientDa
 
 ## Aufgabe 4: Retrospektive
 
-Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in einer eigenen Markdown-Datei (z.B. `Testing.md`) in eurem Repository fest:
+Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in [`abgabe/AB05.md`](../abgabe/AB05.md) fest:
 
 1. **Was lief gut** bei der Umsetzung der Lernsituation?
 2. **Was war die größte Hürde?**
-3. **Aufwandsvergleich:** Vergleicht eure geschätzten Stunden aus AB 03 mit der tatsächlich benötigten Zeit. Wo lagt ihr daneben und warum?
+3. **Überraschungen:** Welche Story oder welcher Workstream war überraschend aufwändig oder leicht — und warum?
 4. **Was würdet ihr beim nächsten Mal anders machen?**
 
 ---
