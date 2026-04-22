@@ -35,9 +35,11 @@ Untersucht, welche technischen Schutzmaßnahmen vorhanden oder **nicht** vorhand
 
 Untersucht, ob die Anwendung die Grundprinzipien einhält. Tragt eure Analyse hier ein.
 
-### c) Betroffenenrechte (Art. 15-22 DSGVO)
+### c) Betroffenenrechte (Art. 15–22 DSGVO)
 
 Untersucht, ob Patienten ihre Rechte ausüben können. Tragt eure Analyse hier ein.
+
+> **Richtwert:** Eine gründliche Analyse kommt auf **ca. 10–15 Verstöße** über alle drei Bereiche. Wenn ihr deutlich weniger findet, schaut noch einmal genauer in den Code (Authentifizierung, Logging, Rollen, gespeicherte Felder, Löschung, Export). In AB 03 wählt ihr daraus drei priorisierte aus, die ihr als User Stories umsetzt — genug Material zum Auswählen ist also wichtig.
 
 ## Aufgabe 2: Technische Anforderungen ableiten
 

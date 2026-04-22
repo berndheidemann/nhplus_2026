@@ -30,7 +30,7 @@ Für das Login-System benötigt ihr:
 - Einen `LoginController`, der die Eingabe mit `PasswordUtil.verify(...)` gegen die Datenbank prüft.
 - Das Login-Fenster wird **vor** dem Hauptfenster geladen. Erst nach erfolgreicher Anmeldung wird das Hauptfenster geöffnet.
 
-> **Leseauftrag vor der Umsetzung:** Öffnet `PasswordUtil.java` und studiert den Javadoc-Kommentar sowie die drei öffentlichen Methoden. Beantwortet die drei Fragen in [`abgabe/AB04.md`](../abgabe/AB04.md) (Abschnitt „Leseauftrag PasswordUtil"):
+> **Leseauftrag:** Öffnet `PasswordUtil.java` und studiert den Javadoc-Kommentar sowie die drei öffentlichen Methoden. Beantwortet die drei Fragen in [`abgabe/AB04.md`](../abgabe/AB04.md) (Abschnitt „Leseauftrag PasswordUtil"):
 >
 > 1. Warum wird beim Anlegen eines neuen Nutzers ein zufälliger Salt erzeugt, statt einen festen Wert zu verwenden?
 > 2. Was würde passieren, wenn wir den Salt weglassen und nur `hash(password, "")` aufrufen? Warum wäre das gefährlich?
@@ -38,14 +38,14 @@ Für das Login-System benötigt ihr:
 
 ## Orientierung
 
-Die bestehenden Klassen dienen euch als Vorlage — studiert sie, bevor ihr eigene Module entwickelt:
+Die bestehenden Klassen dienen euch als Vorlage — studiert sie, bevor ihr eigene Module entwickelt. Die Aufgaben aus [AB 01](AB01-Analyse-der-Architektur.md) haben euch darauf vorbereitet.
 
 | Schicht | Bestehende Beispiele | Eure Aufgabe |
 |---------|---------------------|--------------|
 | **Model** | `Patient.java`, `Treatment.java` | Neue Modelklassen erstellen |
-| **DAO** | `PatientDao.java`, `TreatmentDao.java` | Neue DAO-Klassen von `DaoImp` ableiten |
+| **DAO** | `PatientDao.java`, `TreatmentDao.java` | Neue DAO-Klassen von `DaoImp` ableiten (siehe AB 01, Aufgabe 1) |
 | **View** | `AllPatientView.fxml`, `AllTreatmentView.fxml` | Neue FXML-Views erstellen |
-| **Controller** | `AllPatientController.java`, `AllTreatmentController.java` | Neue Controller erstellen |
+| **Controller** | `AllPatientController.java`, `AllTreatmentController.java` | Neue Controller erstellen (siehe AB 01, Aufgabe 4) |
 
 > **Tipp zum Einstieg in FXML:** JavaFX und FXML haben wir nicht explizit behandelt. Öffnet `AllPatientView.fxml` im SceneBuilder und baut eure Pfleger-View analog auf — so seht ihr direkt, wie TableView, Textfelder und Buttons verdrahtet werden.
 

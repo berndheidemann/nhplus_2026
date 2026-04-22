@@ -2,7 +2,7 @@
 
 > **Thema:** Qualitätssicherung durch manuelle und automatisierte Tests
 >
-> **Zeitrahmen:** ~3 Unterrichtsstunden
+> **Zeitrahmen:** ~4 Unterrichtsstunden
 
 **Nach Bearbeitung dieses Arbeitsblatts könnt ihr:**
 - Testfälle systematisch durchführen und dokumentieren
@@ -42,7 +42,7 @@ Als Vorlage dient die Datei `src/test/java/de/hitec/nhplus/datastorage/PatientDa
 
 ## Aufgabe 4: Code-Reflexion — OO-Entwurfsprinzipien
 
-In der Zuul-Lernsituation habt ihr Prinzipien wie **Kopplung**, **Kohäsion / SRP**, **Kapselung (Geheimnisprinzip)** und **DRY** kennengelernt. Wendet diese auf euren eigenen NHPlus-Code an.
+In der **vorangegangenen Zuul-Lernsituation** habt ihr Prinzipien wie **Kopplung**, **Kohäsion / SRP**, **Kapselung (Geheimnisprinzip)** und **DRY** kennengelernt. Wendet diese jetzt auf euren eigenen NHPlus-Code an. Schaut bei Unsicherheit in eure Zuul-Unterlagen zurück.
 
 Findet in eurem neu geschriebenen Code (Pfleger-Modul und Login-System):
 
