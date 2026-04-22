@@ -9,6 +9,7 @@
 - zwischen manuellem und automatisiertem Testen unterscheiden
 - einen JUnit-Test für eine DAO-Klasse schreiben
 - die Qualität eurer Implementierung anhand der Akzeptanzkriterien überprüfen
+- OO-Entwurfsprinzipien aus der Zuul-Lernsituation an eurem eigenen Code reflektieren
 
 ## Aufgabe 1: Manuelle Tests durchführen
 
@@ -39,7 +40,20 @@ Als Vorlage dient die Datei `src/test/java/de/hitec/nhplus/datastorage/PatientDa
 
 > **Hinweis:** JUnit 5 ist bereits als Dependency in der `pom.xml` eingebunden. Erstellt eure Testklassen im Verzeichnis `src/test/java/` in der gleichen Package-Struktur wie der zu testende Code.
 
-## Aufgabe 4: Retrospektive
+## Aufgabe 4: Code-Reflexion — OO-Entwurfsprinzipien
+
+In der Zuul-Lernsituation habt ihr Prinzipien wie **Kopplung**, **Kohäsion / SRP**, **Kapselung (Geheimnisprinzip)** und **DRY** kennengelernt. Wendet diese auf euren eigenen NHPlus-Code an.
+
+Findet in eurem neu geschriebenen Code (Pfleger-Modul und Login-System):
+
+1. Eine Stelle, an der ihr bewusst **hohe Kohäsion / SRP** erreicht habt — welche Klasse, welche Verantwortung?
+2. Eine Stelle, an der ihr **DRY** angewendet habt — was habt ihr nicht dupliziert, obwohl ihr es hättet tun können?
+3. Eine Stelle, an der ihr **Kapselung** gezielt eingesetzt habt — welche Felder sind privat, und warum?
+4. Eine Stelle, an der ihr **Kopplung gering gehalten** habt — welche zwei Klassen hättet ihr enger koppeln können, habt es aber nicht getan?
+
+Beschreibt jede Stelle in 2–3 Sätzen in [`abgabe/AB05.md`](../abgabe/AB05.md) und verweist auf Klasse und Methode.
+
+## Aufgabe 5: Retrospektive
 
 Beantwortet als Gruppe die folgenden Fragen und haltet die Antworten in [`abgabe/AB05.md`](../abgabe/AB05.md) fest:
 
