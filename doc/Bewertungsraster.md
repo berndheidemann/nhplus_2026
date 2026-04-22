@@ -8,9 +8,9 @@ Dieses Raster zeigt euch, woran eure Arbeit gemessen wird. Nutzt es zur Selbstko
 
 | Bereich | Gewichtung | Beschreibung |
 |---|---|---|
-| **Architekturverständnis** (AB 01) | 10% | Verständnis von DAO, MVP, Singleton; korrekte Erklärungen |
+| **Architekturverständnis** (AB 01) | 10% | Verständnis von DAO, MVP, Singleton; Nachvollzug einer Modul-Erweiterung; erste eigene Code-Änderung durchgeführt |
 | **DSGVO-Analyse** (AB 02) | 10% | Vollständigkeit der gefundenen Verstöße; korrekte Zuordnung zu DSGVO-Artikeln; Ableitung technischer Anforderungen |
-| **Planung** (AB 03) | 20% | Qualität der User Stories, Akzeptanzkriterien, Tasks und Testfälle |
+| **Planung** (AB 03) | 20% | Qualität der User Stories, Akzeptanzkriterien, Tasks und Testfälle; begründete Priorisierung der DSGVO-Fixes |
 | **Implementierung** (AB 04) | 45% | Funktionsfähigkeit, Code-Qualität, Einhaltung der Architektur |
 | **Testen & Reflexion** (AB 05) | 15% | Testdokumentation, JUnit-Tests, Code-Reflexion zu OO-Entwurfsprinzipien, Retrospektive |
 
@@ -18,8 +18,8 @@ Dieses Raster zeigt euch, woran eure Arbeit gemessen wird. Nutzt es zur Selbstko
 
 | Kriterium | Sehr gut | Ausreichend | Nicht bestanden |
 |---|---|---|---|
-| **Pfleger-Modul** | Alle vier CRUD-User-Stories umgesetzt, alle Akzeptanzkriterien erfüllt | Grundfunktionen (Anlegen, Anzeigen) vorhanden, kleinere Mängel bei Ändern/Löschen | Modul fehlt oder nicht lauffähig |
-| **Login-System** | `PasswordUtil` korrekt integriert (Salt und Hash werden beim Anlegen gespeichert, Prüfung über `verify`), Fehlermeldung bei falschem Login, Leseauftrag inhaltlich sauber beantwortet | Login funktioniert grundsätzlich, aber Fehlermeldung fehlt oder der Leseauftrag ist lückenhaft | Kein Login **oder** Passwort im Klartext **oder** `PasswordUtil` ignoriert und eigenes, fehlerhaftes Hashing gebaut |
+| **Pfleger-Modul** | Mindestens alle vier CRUD-User-Stories umgesetzt, alle Akzeptanzkriterien erfüllt | Grundfunktionen (Anlegen, Anzeigen) vorhanden, kleinere Mängel bei Ändern/Löschen | Modul fehlt oder nicht lauffähig |
+| **Login-System** | `PasswordUtil` korrekt integriert (Salt und Hash werden beim Anlegen gespeichert, Prüfung über `verify`), Fehlermeldung bei falschem Login, Leseauftrag zu `PasswordUtil` (Fragen 1–3) vollständig und fachlich korrekt beantwortet | Login funktioniert grundsätzlich, aber Fehlermeldung fehlt oder einzelne Antworten des Leseauftrags sind lückenhaft | Kein Login **oder** Passwort im Klartext **oder** `PasswordUtil` ignoriert und eigenes, fehlerhaftes Hashing gebaut |
 | **Architekturkonformität** | Alle Patterns korrekt angewandt (DAO, MVP, Singleton) | Patterns erkennbar, kleinere Abweichungen | Patterns ignoriert, Code unstrukturiert |
 | **Code-Qualität** | Javadoc vollständig, sinnvolle Benennung, lesbarer Code | Javadoc vorhanden, Code lesbar | Kein Javadoc, unverständlicher Code |
 | **OO-Entwurfsprinzipien** *(anknüpfend an die Zuul-Lernsituation)* | **Geringe Kopplung** zwischen den DAO/MVP-Schichten (kein SQL im Controller, keine FXML-Typen im Model), **hohe Kohäsion / SRP** (jede neue Klasse hat eine klare Verantwortung), **saubere Kapselung** (Felder privat, Zugriff über Methoden), **DRY** (keine duplizierte Logik zwischen Patient- und Caregiver-Modul) | Prinzipien erkennbar angewandt, vereinzelte Verstöße (eine Klasse mit zwei Aufgaben, doppelte Logik an 1–2 Stellen) | Klare Verstöße: öffentliche Felder, Controller greift direkt auf die DB zu, dupliziertes DAO-Grundgerüst, „Gott-Klasse" |
