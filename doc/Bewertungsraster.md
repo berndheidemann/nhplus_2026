@@ -12,7 +12,7 @@ Dieses Raster zeigt euch, woran eure Arbeit gemessen wird. Nutzt es zur Selbstko
 | **DSGVO-Analyse** (AB 02) | 10% | Vollständigkeit der gefundenen Verstöße; korrekte Zuordnung zu DSGVO-Artikeln; Ableitung technischer Anforderungen |
 | **Planung** (AB 03) | 20% | Qualität der User Stories, Akzeptanzkriterien, Tasks und Testfälle |
 | **Implementierung** (AB 04) | 45% | Funktionsfähigkeit, Code-Qualität, Einhaltung der Architektur |
-| **Testen & Reflexion** (AB 05) | 15% | Testdokumentation, JUnit-Tests, Retrospektive |
+| **Testen & Reflexion** (AB 05) | 15% | Testdokumentation, JUnit-Tests, Code-Reflexion zu OO-Entwurfsprinzipien, Retrospektive |
 
 ## Detailkriterien Implementierung (AB 04)
 
